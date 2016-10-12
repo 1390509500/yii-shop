@@ -26,13 +26,13 @@ use yii\helpers\Html;
                                 'class' => 'new_user_form inline-input',
                             ],
                         ]);
-                        echo $form->field($model, 'parentid')->dropDownList($list);
+                        echo $form->field($model, 'parentId')->dropDownList($list);
                         echo $form->field($model, 'title')->textInput(['class' => 'span9']);
                         ?>
                         <div class="span11 field-box actions">
                             <?php echo Html::submitButton('添加', ['class' => 'btn-glow primary']); ?>
                             <span>OR</span>
-                            <?php echo Html::resetButton('取消', ['class' => 'reset']); ?>
+                            <?php echo Html::resetButton('重置', ['class' => 'reset']); ?>
                         </div>
                         <?php ActiveForm::end(); ?>
                     </div>

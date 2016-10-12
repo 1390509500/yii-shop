@@ -1,7 +1,21 @@
 <?php
+
+namespace app\modules\controllers;
+
+use yii\web\Controller;
+
 /**
- * Created by PhpStorm.
- * User: psl
- * Date: 2016/10/2
- * Time: 16:06
+ * Default controller for the `admin` module
  */
+class IndexController extends Controller
+{
+    public $layout = "main";
+    /**
+     * Renders the index view for the module
+     * @return string
+     */
+    public function actionIndex()
+    {
+        return $this->render('index');
+    }
+}

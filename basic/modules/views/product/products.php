@@ -1,4 +1,4 @@
-    <link rel="stylesheet" href="assets/admin/css/compiled/user-list.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="admin/css/compiled/user-list.css" type="text/css" media="screen" />
     <!-- main container -->
     <div class="content">
         
@@ -54,7 +54,7 @@
                         <?php foreach($products as $product): ?>
                         <tr class="first">
                             <td>
-                                <img src="<?php echo $product->cover; ?>-coversmall" class="img-circle avatar hidden-phone" />
+                                <img src="<?php echo $product->cover; ?>" class="img-circle avatar hidden-phone" />
                                 <a href="#" class="name"><?php echo $product->title; ?></a>
                             </td>
                             <td>
@@ -72,10 +72,12 @@
                                 <?php echo $sale[$product->issale]; ?>
                             </td>
                             <td>
+                                <?php if($product->issale==1):?>
                                 <?php echo $product->saleprice; ?>
+                                <?php endif;?>
                             </td>
                             <td>
-                                <?php $on = ['下架', '上架'] ?>
+                                <?php $on = ['上架', '下架'] ?>
                                 <?php echo $on[$product->ison]; ?>
                             </td>
                             <td>
@@ -84,10 +86,10 @@
                             </td>
 
                             <td class="align-right">
-                            <a href="<?php echo yii\helpers\Url::to(['product/mod', 'productid' => $product->productid]); ?>">编辑</a>
-                            <a href="<?php echo yii\helpers\Url::to(['product/on', 'productid' => $product->productid]); ?>">上架</a>
-                            <a href="<?php echo yii\helpers\Url::to(['product/off', 'productid' => $product->productid]); ?>">下架</a>
-                            <a href="<?php echo yii\helpers\Url::to(['product/del', 'productid' => $product->productid]); ?>">删除</a>
+                            <a href="<?php echo yii\helpers\Url::to(['product/mod', 'productId' => $product->productId]); ?>">编辑</a>
+                            <a href="<?php echo yii\helpers\Url::to(['product/on', 'productId' => $product->productId]); ?>">上架</a>
+                            <a href="<?php echo yii\helpers\Url::to(['product/off', 'productId' => $product->productId]); ?>">下架</a>
+                            <a href="<?php echo yii\helpers\Url::to(['product/del', 'productId' => $product->productId]); ?>">删除</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

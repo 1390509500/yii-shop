@@ -40,14 +40,14 @@
                     <?php foreach($cates as $cate): ?>
                         <tr class="first">
                             <td>
-                                <?php echo $cate['cateid'] ?>
+                                <?php echo $cate['cateId'] ?>
                             </td>
                             <td>
                                 <?php echo $cate['title'] ; ?>
                             </td>
                             <td class="align-right">
-                                <a href="<?php echo yii\helpers\Url::to(['category/mod', 'cateid' => $cate['cateid']]); ?>">编辑</a>
-                                <a href="<?php echo yii\helpers\Url::to(['category/del', 'cateid' => $cate['cateid']]); ?>">删除</a>
+                                <a href="<?php echo yii\helpers\Url::to(['category/mod', 'cateId' => $cate['cateId']]); ?>">编辑</a>
+                                <a href="<?php echo yii\helpers\Url::to(['category/del', 'cateId' => $cate['cateId']]); ?>">删除</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
