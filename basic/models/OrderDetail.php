@@ -9,7 +9,7 @@ class OrderDetail extends ActiveRecord
     public function rules()
     {
         return [
-            [['productid', 'productnum', 'price', 'orderid', 'createtime'],'required'],
+            [['productId', 'productnum', 'price', 'orderId', 'createtime'],'required'],
         ];
     }
 

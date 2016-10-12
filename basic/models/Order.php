@@ -33,8 +33,8 @@ class Order extends ActiveRecord
     public function rules()
     {
         return [
-            [['userid', 'status'], 'required', 'on' => ['add']],
-            [['addressid', 'expressid', 'amount', 'status'], 'required', 'on' => ['update']],
+            [['userId', 'status'], 'required', 'on' => ['add']],
+            [['addressId', 'expressId', 'amount', 'status'], 'required', 'on' => ['update']],
             ['expressno', 'required', 'message' => '请输入快递单号', 'on' => 'send'],
             ['createtime', 'safe', 'on' => ['add']],
         ];
@@ -62,10 +62,10 @@ class Order extends ActiveRecord
 
     public static function getData($order)
     {
-        $details = OrderDetail::find()->where('orderid = :oid', [':oid' => $order->orderid])->all();
+        $details = OrderDetail::find()->where('orderId = :oId', [':oId' => $order->orderId])->all();
         $products = [];
         foreach($details as $detail) {
-            $product = Product::find()->where('productid = :pid', [':pid' => $detail->productid])->one();
+            $product = Product::find()->where('productId = :pId', [':pId' => $detail->productId])->one();
             if (empty($product)) {
                 continue;
             }
@@ -73,11 +73,11 @@ class Order extends ActiveRecord
             $products[] = $product;
         }
         $order->products = $products;
-        $user = User::find()->where('userid = :uid', [':uid' => $order->userid])->one();
+        $user = User::find()->where('userId = :uId', [':uId' => $order->userId])->one();
         if (!empty($user)) {
             $order->username = $user->username;
         }
-        $order->address = Address::find()->where('addressid = :aid', [':aid' => $order->addressid])->one();
+        $order->address = Address::find()->where('addressId = :aId', [':aId' => $order->addressId])->one();
         if (empty($order->address)) {
             $order->address = "";
         } else {
@@ -87,20 +87,20 @@ class Order extends ActiveRecord
         return $order;
     }
 
-    public static function getProducts($userid)
+    public static function getProducts($userId)
     {
-        $orders = self::find()->where('status > 0 and userid = :uid', [':uid' => $userid])->orderBy('createtime desc')->all();
+        $orders = self::find()->where('status > 0 and userId = :uId', [':uId' => $userId])->orderBy('createtime desc')->all();
         foreach($orders as $order) {
-            $details = OrderDetail::find()->where('orderid = :oid', [':oid' => $order->orderid])->all();
+            $details = OrderDetail::find()->where('orderId = :oId', [':oId' => $order->orderId])->all();
             $products = [];
             foreach($details as $detail) {
-                $product = Product::find()->where('productid = :pid', [':pid' => $detail->productid])->one();
+                $product = Product::find()->where('productId = :pId', [':pId' => $detail->productId])->one();
                 if (empty($product)) {
                     continue;
                 }
                 $product->num = $detail->productnum;
                 $product->price = $detail->price;
-                $product->cate = Category::find()->where('cateid = :cid', [':cid' => $product->cateid])->one()->title;
+                $product->cate = Category::find()->where('cateId = :cId', [':cId' => $product->cateId])->one()->title;
                 $products[] = $product;
             }
             $order->zhstatus = self::$status[$order->status];
