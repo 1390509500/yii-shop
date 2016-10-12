@@ -26,7 +26,7 @@ class Swift_Transport_Esmtp_Auth_LoginAuthenticator implements Swift_Transport_E
     }
 
     /**
-     * Try to authenticate the user with $username and $password.
+     * Try to authenticate the admin with $username and $password.
      *
      * @param Swift_Transport_SmtpAgent $agent
      * @param string                    $username

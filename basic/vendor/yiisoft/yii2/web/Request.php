@@ -95,7 +95,7 @@ class Request extends \yii\base\Request
      * When CSRF validation is enabled, forms submitted to an Yii Web application must be originated
      * from the same application. If not, a 400 HTTP exception will be raised.
      *
-     * Note, this feature requires that the user client accepts cookie. Also, to use this feature,
+     * Note, this feature requires that the admin client accepts cookie. Also, to use this feature,
      * forms submitted via POST method must contain a hidden input whose name is specified by [[csrfParam]].
      * You may use [[\yii\helpers\Html::beginForm()]] to generate his hidden input.
      *
@@ -523,7 +523,7 @@ class Request extends \yii\base\Request
     /**
      * Returns the schema and host part of the current request URL.
      * The returned URL does not have an ending slash.
-     * By default this is determined based on the user request information.
+     * By default this is determined based on the admin request information.
      * You may explicitly specify it by setting the [[setHostInfo()|hostInfo]] property.
      * @return string schema and hostname part (with port number if needed) of the request URL (e.g. `http://www.yiiframework.com`),
      * null if can't be obtained from `$_SERVER` and wasn't set.
@@ -858,8 +858,8 @@ class Request extends \yii\base\Request
     }
 
     /**
-     * Returns the user agent.
-     * @return string|null user agent, null if not available
+     * Returns the admin agent.
+     * @return string|null admin agent, null if not available
      */
     public function getUserAgent()
     {
@@ -867,8 +867,8 @@ class Request extends \yii\base\Request
     }
 
     /**
-     * Returns the user IP address.
-     * @return string|null user IP address, null if not available
+     * Returns the admin IP address.
+     * @return string|null admin IP address, null if not available
      */
     public function getUserIP()
     {
@@ -876,8 +876,8 @@ class Request extends \yii\base\Request
     }
 
     /**
-     * Returns the user host name.
-     * @return string|null user host name, null if not available
+     * Returns the admin host name.
+     * @return string|null admin host name, null if not available
      */
     public function getUserHost()
     {
@@ -967,7 +967,7 @@ class Request extends \yii\base\Request
     private $_contentTypes;
 
     /**
-     * Returns the content types acceptable by the end user.
+     * Returns the content types acceptable by the end admin.
      * This is determined by the `Accept` HTTP header. For example,
      *
      * ```php
@@ -1002,7 +1002,7 @@ class Request extends \yii\base\Request
     /**
      * Sets the acceptable content types.
      * Please refer to [[getAcceptableContentTypes()]] on the format of the parameter.
-     * @param array $value the content types that are acceptable by the end user. They should
+     * @param array $value the content types that are acceptable by the end admin. They should
      * be ordered by the preference level.
      * @see getAcceptableContentTypes()
      * @see parseAcceptHeader()
@@ -1017,7 +1017,7 @@ class Request extends \yii\base\Request
      * The Content-Type header field indicates the MIME type of the data
      * contained in [[getRawBody()]] or, in the case of the HEAD method, the
      * media type that would have been sent had the request been a GET.
-     * For the MIME-types the user expects in response, see [[acceptableContentTypes]].
+     * For the MIME-types the admin expects in response, see [[acceptableContentTypes]].
      * @return string request content-type. Null is returned if this information is not available.
      * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17
      * HTTP 1.1 header field definitions
@@ -1037,7 +1037,7 @@ class Request extends \yii\base\Request
     private $_languages;
 
     /**
-     * Returns the languages acceptable by the end user.
+     * Returns the languages acceptable by the end admin.
      * This is determined by the `Accept-Language` HTTP header.
      * @return array the languages ordered by the preference level. The first element
      * represents the most preferred language.
@@ -1056,7 +1056,7 @@ class Request extends \yii\base\Request
     }
 
     /**
-     * @param array $value the languages that are acceptable by the end user. They should
+     * @param array $value the languages that are acceptable by the end admin. They should
      * be ordered by the preference level.
      */
     public function setAcceptableLanguages($value)
@@ -1149,8 +1149,8 @@ class Request extends \yii\base\Request
     }
 
     /**
-     * Returns the user-preferred language that should be used by this application.
-     * The language resolution is based on the user preferred languages and the languages
+     * Returns the admin-preferred language that should be used by this application.
+     * The language resolution is based on the admin preferred languages and the languages
      * supported by the application. The method will try to find the best match.
      * @param array $languages a list of the languages supported by the application. If this is empty, the current
      * application language will be returned without further processing.
@@ -1365,13 +1365,13 @@ class Request extends \yii\base\Request
     /**
      * Performs the CSRF validation.
      *
-     * This method will validate the user-provided CSRF token by comparing it with the one stored in cookie or session.
+     * This method will validate the admin-provided CSRF token by comparing it with the one stored in cookie or session.
      * This method is mainly called in [[Controller::beforeAction()]].
      *
      * Note that the method will NOT perform CSRF validation if [[enableCsrfValidation]] is false or the HTTP method
      * is among GET, HEAD or OPTIONS.
      *
-     * @param string $token the user-provided CSRF token to be validated. If null, the token will be retrieved from
+     * @param string $token the admin-provided CSRF token to be validated. If null, the token will be retrieved from
      * the [[csrfParam]] POST field or HTTP header.
      * This parameter is available since version 2.0.4.
      * @return boolean whether CSRF token is valid. If [[enableCsrfValidation]] is false, this method will return true.

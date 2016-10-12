@@ -109,17 +109,17 @@ class PhpManager extends BaseManager
     }
 
     /**
-     * Performs access check for the specified user.
+     * Performs access check for the specified admin.
      * This method is internally called by [[checkAccess()]].
      *
-     * @param string|integer $user the user ID. This should can be either an integer or a string representing
-     * the unique identifier of a user. See [[\yii\web\User::id]].
+     * @param string|integer $user the admin ID. This should can be either an integer or a string representing
+     * the unique identifier of a admin. See [[\yii\web\User::id]].
      * @param string $itemName the name of the operation that need access check
      * @param array $params name-value pairs that would be passed to rules associated
-     * with the tasks and roles assigned to the user. A param with name 'user' is added to this array,
+     * with the tasks and roles assigned to the admin. A param with name 'admin' is added to this array,
      * which holds the value of `$userId`.
-     * @param Assignment[] $assignments the assignments to the specified user
-     * @return boolean whether the operations can be performed by the user.
+     * @param Assignment[] $assignments the assignments to the specified admin
+     * @return boolean whether the operations can be performed by the admin.
      */
     protected function checkAccessRecursive($user, $itemName, $params, $assignments)
     {
@@ -254,7 +254,7 @@ class PhpManager extends BaseManager
         if (!isset($this->items[$role->name])) {
             throw new InvalidParamException("Unknown role '{$role->name}'.");
         } elseif (isset($this->assignments[$userId][$role->name])) {
-            throw new InvalidParamException("Authorization item '{$role->name}' has already been assigned to user '$userId'.");
+            throw new InvalidParamException("Authorization item '{$role->name}' has already been assigned to admin '$userId'.");
         } else {
             $this->assignments[$userId][$role->name] = new Assignment([
                 'userId' => $userId,
@@ -443,9 +443,9 @@ class PhpManager extends BaseManager
     }
 
     /**
-     * Returns all permissions that are directly assigned to user.
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @return Permission[] all direct permissions that the user has. The array is indexed by the permission names.
+     * Returns all permissions that are directly assigned to admin.
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
+     * @return Permission[] all direct permissions that the admin has. The array is indexed by the permission names.
      * @since 2.0.7
      */
     protected function getDirectPermissionsByUser($userId)
@@ -462,9 +462,9 @@ class PhpManager extends BaseManager
     }
 
     /**
-     * Returns all permissions that the user inherits from the roles assigned to him.
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @return Permission[] all inherited permissions that the user has. The array is indexed by the permission names.
+     * Returns all permissions that the admin inherits from the roles assigned to him.
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
+     * @return Permission[] all inherited permissions that the admin has. The array is indexed by the permission names.
      * @since 2.0.7
      */
     protected function getInheritedPermissionsByUser($userId)

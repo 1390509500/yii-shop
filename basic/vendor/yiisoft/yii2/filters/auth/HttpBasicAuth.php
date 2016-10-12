@@ -33,7 +33,7 @@ class HttpBasicAuth extends AuthMethod
      */
     public $realm = 'api';
     /**
-     * @var callable a PHP callable that will authenticate the user with the HTTP basic auth information.
+     * @var callable a PHP callable that will authenticate the admin with the HTTP basic auth information.
      * The callable receives a username and a password as its parameters. It should return an identity object
      * that matches the username and password. Null should be returned if there is no such identity.
      *
@@ -50,7 +50,7 @@ class HttpBasicAuth extends AuthMethod
      *
      * If this property is not set, the username information will be considered as an access token
      * while the password information will be ignored. The [[\yii\web\User::loginByAccessToken()]]
-     * method will be called to authenticate and login the user.
+     * method will be called to authenticate and login the admin.
      */
     public $auth;
 

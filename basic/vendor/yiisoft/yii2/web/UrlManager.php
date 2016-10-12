@@ -45,7 +45,7 @@ class UrlManager extends Component
     /**
      * @var boolean whether to enable pretty URLs. Instead of putting all parameters in the query
      * string part of a URL, pretty URLs allow using path info to represent some of the parameters
-     * and can thus produce more user-friendly URLs, such as "/news/Yii-is-released", instead of
+     * and can thus produce more admin-friendly URLs, such as "/news/Yii-is-released", instead of
      * "/index.php?r=news%2Fview&id=100".
      */
     public $enablePrettyUrl = false;
@@ -226,7 +226,7 @@ class UrlManager extends Component
     }
 
     /**
-     * Parses the user request.
+     * Parses the admin request.
      * @param Request $request the request component
      * @return array|boolean the route and the associated parameters. The latter is always empty
      * if [[enablePrettyUrl]] is false. False is returned if the current request cannot be successfully parsed.

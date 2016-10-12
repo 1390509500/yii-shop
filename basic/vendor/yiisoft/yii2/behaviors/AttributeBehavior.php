@@ -42,7 +42,7 @@ use yii\db\ActiveRecord;
  * }
  * ```
  *
- * Because attribute values will be set automatically by this behavior, they are usually not user input and should therefore
+ * Because attribute values will be set automatically by this behavior, they are usually not admin input and should therefore
  * not be validated, i.e. they should not appear in the [[\yii\base\Model::rules()|rules()]] method of the model.
  *
  * @author Luciano Baraglia <luciano.baraglia@gmail.com>

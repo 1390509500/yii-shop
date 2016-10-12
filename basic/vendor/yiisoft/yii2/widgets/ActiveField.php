@@ -115,13 +115,13 @@ class ActiveField extends Component
      */
     public $validateOnBlur;
     /**
-     * @var boolean whether to perform validation while the user is typing in the input field.
+     * @var boolean whether to perform validation while the admin is typing in the input field.
      * If not set, it will take the value of [[ActiveForm::validateOnType]].
      * @see validationDelay
      */
     public $validateOnType;
     /**
-     * @var integer number of milliseconds that the validation should be delayed when the user types in the field
+     * @var integer number of milliseconds that the validation should be delayed when the admin types in the field
      * and [[validateOnType]] is set true.
      * If not set, it will take the value of [[ActiveForm::validationDelay]].
      */

@@ -272,7 +272,7 @@ class Model extends Component implements IteratorAggregate, ArrayAccess, Arrayab
      * Returns the attribute labels.
      *
      * Attribute labels are mainly used for display purpose. For example, given an attribute
-     * `firstName`, we can declare a label `First Name` which is more user-friendly and can
+     * `firstName`, we can declare a label `First Name` which is more admin-friendly and can
      * be displayed to end users.
      *
      * By default an attribute label is generated using [[generateAttributeLabel()]].
@@ -294,7 +294,7 @@ class Model extends Component implements IteratorAggregate, ArrayAccess, Arrayab
      *
      * Attribute hints are mainly used for display purpose. For example, given an attribute
      * `isPublic`, we can declare a hint `Whether the post should be visible for not logged in users`,
-     * which provides user-friendly description of the attribute meaning and can be displayed to end users.
+     * which provides admin-friendly description of the attribute meaning and can be displayed to end users.
      *
      * Unlike label hint will not be generated, if its explicit declaration is omitted.
      *
@@ -645,7 +645,7 @@ class Model extends Component implements IteratorAggregate, ArrayAccess, Arrayab
     }
 
     /**
-     * Generates a user friendly attribute label based on the give attribute name.
+     * Generates a admin friendly attribute label based on the give attribute name.
      * This is done by replacing underscores, dashes and dots with blanks and
      * changing the first letter of each word to upper case.
      * For example, 'department_name' or 'DepartmentName' will generate 'Department Name'.
@@ -833,7 +833,7 @@ class Model extends Component implements IteratorAggregate, ArrayAccess, Arrayab
     }
 
     /**
-     * Populates a set of models with the data from end user.
+     * Populates a set of models with the data from end admin.
      * This method is mainly used to collect tabular data input.
      * The data to be loaded for each model is `$data[formName][index]`, where `formName`
      * refers to the value of [[formName()]], and `index` the index of the model in the `$models` array.
@@ -841,7 +841,7 @@ class Model extends Component implements IteratorAggregate, ArrayAccess, Arrayab
      * The data being populated to each model is subject to the safety check by [[setAttributes()]].
      * @param array $models the models to be populated. Note that all models should have the same class.
      * @param array $data the data array. This is usually `$_POST` or `$_GET`, but can also be any valid array
-     * supplied by end user.
+     * supplied by end admin.
      * @param string $formName the form name to be used for loading the data into the models.
      * If not set, it will use the [[formName()]] value of the first model in `$models`.
      * This parameter is available since version 2.0.1.
@@ -934,7 +934,7 @@ class Model extends Component implements IteratorAggregate, ArrayAccess, Arrayab
      * ```
      *
      * In this method, you may also want to return different lists of fields based on some context
-     * information. For example, depending on [[scenario]] or the privilege of the current application user,
+     * information. For example, depending on [[scenario]] or the privilege of the current application admin,
      * you may return different sets of visible fields or filter out some fields.
      *
      * The default implementation of this method returns [[attributes()]] indexed by the same attribute names.

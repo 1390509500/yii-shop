@@ -47,7 +47,7 @@ class Swift_Transport_Esmtp_Auth_NTLMAuthenticatorTest extends \SwiftMailerTestC
 
     public function testLMv2Generator()
     {
-        $username = 'user';
+        $username = 'admin';
         $password = 'SecREt01';
         $domain = 'DOMAIN';
         $challenge = '0123456789abcdef';
@@ -104,8 +104,8 @@ class Swift_Transport_Esmtp_Auth_NTLMAuthenticatorTest extends \SwiftMailerTestC
         $this->assertEquals('DOMAIN', $domain,
             '%s: the fetched domain did not match'
         );
-        $this->assertEquals('user', $user,
-            '%s: the fetched user did not match'
+        $this->assertEquals('admin', $user,
+            '%s: the fetched admin did not match'
         );
     }
 
@@ -119,14 +119,14 @@ class Swift_Transport_Esmtp_Auth_NTLMAuthenticatorTest extends \SwiftMailerTestC
         $this->assertEquals('domain.com', $domain,
             '%s: the fetched domain did not match'
         );
-        $this->assertEquals('user', $user,
-            '%s: the fetched user did not match'
+        $this->assertEquals('admin', $user,
+            '%s: the fetched admin did not match'
         );
     }
 
     public function testGetDomainAndUsernameWithAtSymbol()
     {
-        $username = 'user@DOMAIN';
+        $username = 'admin@DOMAIN';
 
         $login = $this->_getAuthenticator();
         list($domain, $user) = $this->_invokePrivateMethod('getDomainAndUsername', $login, array($username));
@@ -134,14 +134,14 @@ class Swift_Transport_Esmtp_Auth_NTLMAuthenticatorTest extends \SwiftMailerTestC
         $this->assertEquals('DOMAIN', $domain,
             '%s: the fetched domain did not match'
         );
-        $this->assertEquals('user', $user,
-            '%s: the fetched user did not match'
+        $this->assertEquals('admin', $user,
+            '%s: the fetched admin did not match'
         );
     }
 
     public function testGetDomainAndUsernameWithAtSymbolAndExtension()
     {
-        $username = 'user@domain.com';
+        $username = 'admin@domain.com';
 
         $login = $this->_getAuthenticator();
         list($domain, $user) = $this->_invokePrivateMethod('getDomainAndUsername', $login, array($username));
@@ -149,8 +149,8 @@ class Swift_Transport_Esmtp_Auth_NTLMAuthenticatorTest extends \SwiftMailerTestC
         $this->assertEquals('domain.com', $domain,
             '%s: the fetched domain did not match'
         );
-        $this->assertEquals('user', $user,
-            '%s: the fetched user did not match'
+        $this->assertEquals('admin', $user,
+            '%s: the fetched admin did not match'
         );
     }
 

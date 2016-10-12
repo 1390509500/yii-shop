@@ -224,7 +224,7 @@ class FixtureController extends Controller
     }
 
     /**
-     * Notifies user that fixtures were successfully loaded.
+     * Notifies admin that fixtures were successfully loaded.
      * @param array $fixtures
      */
     private function notifyLoaded($fixtures)
@@ -235,7 +235,7 @@ class FixtureController extends Controller
     }
 
     /**
-     * Notifies user that there are no fixtures to load according input conditions
+     * Notifies admin that there are no fixtures to load according input conditions
      * @param array $foundFixtures array of found fixtures
      * @param array $except array of names of fixtures that should not be loaded
      */
@@ -257,7 +257,7 @@ class FixtureController extends Controller
     }
 
     /**
-     * Notifies user that there are no fixtures to unload according input conditions
+     * Notifies admin that there are no fixtures to unload according input conditions
      * @param array $foundFixtures array of found fixtures
      * @param array $except array of names of fixtures that should not be loaded
      */
@@ -279,7 +279,7 @@ class FixtureController extends Controller
     }
 
     /**
-     * Notifies user that fixtures were successfully unloaded.
+     * Notifies admin that fixtures were successfully unloaded.
      * @param array $fixtures
      */
     private function notifyUnloaded($fixtures)
@@ -290,7 +290,7 @@ class FixtureController extends Controller
     }
 
     /**
-     * Notifies user that fixtures were not found under fixtures path.
+     * Notifies admin that fixtures were not found under fixtures path.
      * @param array $fixtures
      */
     private function notifyNotFound($fixtures)
@@ -303,7 +303,7 @@ class FixtureController extends Controller
     }
 
     /**
-     * Prompts user with confirmation if fixtures should be loaded.
+     * Prompts admin with confirmation if fixtures should be loaded.
      * @param array $fixtures
      * @param array $except
      * @return boolean
@@ -335,7 +335,7 @@ class FixtureController extends Controller
     }
 
     /**
-     * Prompts user with confirmation for fixtures that should be unloaded.
+     * Prompts admin with confirmation for fixtures that should be unloaded.
      * @param array $fixtures
      * @param array $except
      * @return boolean

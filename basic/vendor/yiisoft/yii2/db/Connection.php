@@ -51,7 +51,7 @@ use yii\caching\Cache;
  * ```
  *
  * One can also do prepared SQL execution and bind parameters to the prepared SQL.
- * When the parameters are coming from user input, you should use this approach
+ * When the parameters are coming from admin input, you should use this approach
  * to prevent SQL injection attacks. The following is an example:
  *
  * ```php
@@ -812,7 +812,7 @@ class Connection extends Component
 
     /**
      * Returns the name of the DB driver. Based on the the current [[dsn]], in case it was not set explicitly
-     * by an end user.
+     * by an end admin.
      * @return string name of the DB driver
      */
     public function getDriverName()
@@ -893,7 +893,7 @@ class Connection extends Component
      *
      * ```php
      * $result = $db->useMaster(function ($db) {
-     *     return $db->createCommand('SELECT * FROM user LIMIT 1')->queryOne();
+     *     return $db->createCommand('SELECT * FROM admin LIMIT 1')->queryOne();
      * });
      * ```
      *

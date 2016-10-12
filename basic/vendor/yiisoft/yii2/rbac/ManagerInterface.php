@@ -69,10 +69,10 @@ interface ManagerInterface extends CheckAccessInterface
     public function getRoles();
 
     /**
-     * Returns the roles that are assigned to the user via [[assign()]].
-     * Note that child roles that are not assigned directly to the user will not be returned.
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @return Role[] all roles directly assigned to the user. The array is indexed by the role names.
+     * Returns the roles that are assigned to the admin via [[assign()]].
+     * Note that child roles that are not assigned directly to the admin will not be returned.
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
+     * @return Role[] all roles directly assigned to the admin. The array is indexed by the role names.
      */
     public function getRolesByUser($userId);
 
@@ -97,9 +97,9 @@ interface ManagerInterface extends CheckAccessInterface
     public function getPermissionsByRole($roleName);
 
     /**
-     * Returns all permissions that the user has.
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @return Permission[] all permissions that the user has. The array is indexed by the permission names.
+     * Returns all permissions that the admin has.
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
+     * @return Permission[] all permissions that the admin has. The array is indexed by the permission names.
      */
     public function getPermissionsByUser($userId);
 
@@ -168,51 +168,51 @@ interface ManagerInterface extends CheckAccessInterface
     public function getChildren($name);
 
     /**
-     * Assigns a role to a user.
+     * Assigns a role to a admin.
      *
      * @param Role $role
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
      * @return Assignment the role assignment information.
-     * @throws \Exception if the role has already been assigned to the user
+     * @throws \Exception if the role has already been assigned to the admin
      */
     public function assign($role, $userId);
 
     /**
-     * Revokes a role from a user.
+     * Revokes a role from a admin.
      * @param Role $role
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
      * @return boolean whether the revoking is successful
      */
     public function revoke($role, $userId);
 
     /**
-     * Revokes all roles from a user.
-     * @param mixed $userId the user ID (see [[\yii\web\User::id]])
+     * Revokes all roles from a admin.
+     * @param mixed $userId the admin ID (see [[\yii\web\User::id]])
      * @return boolean whether the revoking is successful
      */
     public function revokeAll($userId);
 
     /**
-     * Returns the assignment information regarding a role and a user.
+     * Returns the assignment information regarding a role and a admin.
      * @param string $roleName the role name
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
      * @return null|Assignment the assignment information. Null is returned if
-     * the role is not assigned to the user.
+     * the role is not assigned to the admin.
      */
     public function getAssignment($roleName, $userId);
 
     /**
-     * Returns all role assignment information for the specified user.
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
+     * Returns all role assignment information for the specified admin.
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
      * @return Assignment[] the assignments indexed by role names. An empty array will be
-     * returned if there is no role assigned to the user.
+     * returned if there is no role assigned to the admin.
      */
     public function getAssignments($userId);
 
     /**
-     * Returns all user IDs assigned to the role specified.
+     * Returns all admin IDs assigned to the role specified.
      * @param string $roleName
-     * @return array array of user ID strings
+     * @return array array of admin ID strings
      * @since 2.0.7
      */
     public function getUserIdsByRole($roleName);

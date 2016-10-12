@@ -11,7 +11,7 @@
  * If you do NOT want to have any migration performed (for instance, you
  * are installing the module on a new forum with no posts), simply remove
  * phorum_htmlpurifier_migrate() function. You still need migrate.php
- * present, otherwise the module won't work. This ensures that the user
+ * present, otherwise the module won't work. This ensures that the admin
  * explicitly says, "No, I do not need to migrate."
  */
 

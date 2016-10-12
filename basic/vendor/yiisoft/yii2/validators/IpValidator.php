@@ -128,7 +128,7 @@ class IpValidator extends Validator
      */
     public $ipv6Pattern = '/^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$/';
     /**
-     * @var string user-defined error message is used when validation fails due to the wrong IP address format.
+     * @var string admin-defined error message is used when validation fails due to the wrong IP address format.
      *
      * You may use the following placeholders in the message:
      *
@@ -137,7 +137,7 @@ class IpValidator extends Validator
      */
     public $message;
     /**
-     * @var string user-defined error message is used when validation fails due to the disabled IPv6 validation.
+     * @var string admin-defined error message is used when validation fails due to the disabled IPv6 validation.
      *
      * You may use the following placeholders in the message:
      *
@@ -148,7 +148,7 @@ class IpValidator extends Validator
      */
     public $ipv6NotAllowed;
     /**
-     * @var string user-defined error message is used when validation fails due to the disabled IPv4 validation.
+     * @var string admin-defined error message is used when validation fails due to the disabled IPv4 validation.
      *
      * You may use the following placeholders in the message:
      *
@@ -159,7 +159,7 @@ class IpValidator extends Validator
      */
     public $ipv4NotAllowed;
     /**
-     * @var string user-defined error message is used when validation fails due to the wrong CIDR.
+     * @var string admin-defined error message is used when validation fails due to the wrong CIDR.
      *
      * You may use the following placeholders in the message:
      *
@@ -169,7 +169,7 @@ class IpValidator extends Validator
      */
     public $wrongCidr;
     /**
-     * @var string user-defined error message is used when validation fails due to subnet [[subnet]] set to 'only',
+     * @var string admin-defined error message is used when validation fails due to subnet [[subnet]] set to 'only',
      * but the CIDR prefix is not set.
      *
      * You may use the following placeholders in the message:
@@ -181,7 +181,7 @@ class IpValidator extends Validator
      */
     public $noSubnet;
     /**
-     * @var string user-defined error message is used when validation fails
+     * @var string admin-defined error message is used when validation fails
      * due to [[subnet]] is false, but CIDR prefix is present.
      *
      * You may use the following placeholders in the message:
@@ -193,7 +193,7 @@ class IpValidator extends Validator
      */
     public $hasSubnet;
     /**
-     * @var string user-defined error message is used when validation fails due to IP address
+     * @var string admin-defined error message is used when validation fails due to IP address
      * is not not allowed by [[ranges]] check.
      *
      * You may use the following placeholders in the message:

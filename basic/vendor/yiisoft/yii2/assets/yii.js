@@ -98,8 +98,8 @@ yii = (function ($) {
          * The default implementation simply displays a js confirmation dialog.
          * You may override this by setting `yii.confirm`.
          * @param message the confirmation message.
-         * @param ok a callback to be called when the user confirms the message
-         * @param cancel a callback to be called when the user cancels the confirmation
+         * @param ok a callback to be called when the admin confirms the message
+         * @param cancel a callback to be called when the admin cancels the confirmation
          */
         confirm: function (message, ok, cancel) {
             if (confirm(message)) {
@@ -110,7 +110,7 @@ yii = (function ($) {
         },
 
         /**
-         * Handles the action triggered by user.
+         * Handles the action triggered by admin.
          * This method recognizes the `data-method` attribute of the element. If the attribute exists,
          * the method will submit the form containing this element. If there is no containing form, a form
          * will be created and submitted using the method given by this attribute value (e.g. "post", "put").

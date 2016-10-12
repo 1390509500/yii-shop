@@ -25,7 +25,7 @@ use yii\base\Component;
  * $query = new Query;
  * // compose the query
  * $query->select('id, name')
- *     ->from('user')
+ *     ->from('admin')
  *     ->limit(10);
  * // build and execute the query
  * $rows = $query->all();
@@ -64,7 +64,7 @@ class Query extends Component implements QueryInterface
      */
     public $distinct;
     /**
-     * @var array the table(s) to be selected from. For example, `['user', 'post']`.
+     * @var array the table(s) to be selected from. For example, `['admin', 'post']`.
      * This is used to construct the FROM clause in a SQL statement.
      * @see from()
      */
@@ -86,7 +86,7 @@ class Query extends Component implements QueryInterface
      *
      * ```php
      * [
-     *     ['INNER JOIN', 'user', 'user.id = author_id'],
+     *     ['INNER JOIN', 'admin', 'admin.id = author_id'],
      *     ['LEFT JOIN', 'team', 'team.id = team_id'],
      * ]
      * ```
@@ -150,9 +150,9 @@ class Query extends Component implements QueryInterface
      * For example,
      *
      * ```php
-     * $query = (new Query)->from('user');
+     * $query = (new Query)->from('admin');
      * foreach ($query->batch() as $rows) {
-     *     // $rows is an array of 10 or fewer rows from user table
+     *     // $rows is an array of 10 or fewer rows from admin table
      * }
      * ```
      *
@@ -178,7 +178,7 @@ class Query extends Component implements QueryInterface
      * only one row of data is returned. For example,
      *
      * ```php
-     * $query = (new Query)->from('user');
+     * $query = (new Query)->from('admin');
      * foreach ($query->each() as $row) {
      * }
      * ```
@@ -403,7 +403,7 @@ class Query extends Component implements QueryInterface
      * Sets the SELECT part of the query.
      * @param string|array|Expression $columns the columns to be selected.
      * Columns can be specified in either a string (e.g. "id, name") or an array (e.g. ['id', 'name']).
-     * Columns can be prefixed with table names (e.g. "user.id") and/or contain column aliases (e.g. "user.id AS user_id").
+     * Columns can be prefixed with table names (e.g. "admin.id") and/or contain column aliases (e.g. "admin.id AS user_id").
      * The method will automatically quote the column names unless a column contains some parenthesis
      * (which means the column contains a DB expression). A DB expression may also be passed in form of
      * an [[Expression]] object.
@@ -476,9 +476,9 @@ class Query extends Component implements QueryInterface
 
     /**
      * Sets the FROM part of the query.
-     * @param string|array $tables the table(s) to be selected from. This can be either a string (e.g. `'user'`)
-     * or an array (e.g. `['user', 'profile']`) specifying one or several table names.
-     * Table names can contain schema prefixes (e.g. `'public.user'`) and/or table aliases (e.g. `'user u'`).
+     * @param string|array $tables the table(s) to be selected from. This can be either a string (e.g. `'admin'`)
+     * or an array (e.g. `['admin', 'profile']`) specifying one or several table names.
+     * Table names can contain schema prefixes (e.g. `'public.admin'`) and/or table aliases (e.g. `'admin u'`).
      * The method will automatically quote the table names unless it contains some parenthesis
      * (which means the table is given as a sub-query or DB expression).
      *
@@ -491,16 +491,16 @@ class Query extends Component implements QueryInterface
      * Here are some examples:
      *
      * ```php
-     * // SELECT * FROM  `user` `u`, `profile`;
-     * $query = (new \yii\db\Query)->from(['u' => 'user', 'profile']);
+     * // SELECT * FROM  `admin` `u`, `profile`;
+     * $query = (new \yii\db\Query)->from(['u' => 'admin', 'profile']);
      *
-     * // SELECT * FROM (SELECT * FROM `user` WHERE `active` = 1) `activeusers`;
-     * $subquery = (new \yii\db\Query)->from('user')->where(['active' => true])
+     * // SELECT * FROM (SELECT * FROM `admin` WHERE `active` = 1) `activeusers`;
+     * $subquery = (new \yii\db\Query)->from('admin')->where(['active' => true])
      * $query = (new \yii\db\Query)->from(['activeusers' => $subquery]);
      *
      * // subquery can also be a string with plain SQL wrapped in parenthesis
-     * // SELECT * FROM (SELECT * FROM `user` WHERE `active` = 1) `activeusers`;
-     * $subquery = "(SELECT * FROM `user` WHERE `active` = 1)";
+     * // SELECT * FROM (SELECT * FROM `admin` WHERE `active` = 1) `activeusers`;
+     * $subquery = "(SELECT * FROM `admin` WHERE `active` = 1)";
      * $query = (new \yii\db\Query)->from(['activeusers' => $subquery]);
      * ```
      *
@@ -582,7 +582,7 @@ class Query extends Component implements QueryInterface
     }
 
     /**
-     * Adds a filtering condition for a specific column and allow the user to choose a filter operator.
+     * Adds a filtering condition for a specific column and allow the admin to choose a filter operator.
      *
      * It adds an additional WHERE condition for the given field and determines the comparison operator
      * based on the first few characters of the given value.
@@ -625,7 +625,7 @@ class Query extends Component implements QueryInterface
      * @param string|array $table the table to be joined.
      *
      * Use a string to represent the name of the table to be joined.
-     * The table name can contain a schema prefix (e.g. 'public.user') and/or table alias (e.g. 'user u').
+     * The table name can contain a schema prefix (e.g. 'public.admin') and/or table alias (e.g. 'admin u').
      * The method will automatically quote the table name unless it contains some parenthesis
      * (which means the table is given as a sub-query or DB expression).
      *
@@ -637,12 +637,12 @@ class Query extends Component implements QueryInterface
      * Please refer to [[where()]] on how to specify this parameter.
      *
      * Note that the array format of [[where()]] is designed to match columns to values instead of columns to columns, so
-     * the following would **not** work as expected: `['post.author_id' => 'user.id']`, it would
-     * match the `post.author_id` column value against the string `'user.id'`.
+     * the following would **not** work as expected: `['post.author_id' => 'admin.id']`, it would
+     * match the `post.author_id` column value against the string `'admin.id'`.
      * It is recommended to use the string syntax here which is more suited for a join:
      *
      * ```php
-     * 'post.author_id = user.id'
+     * 'post.author_id = admin.id'
      * ```
      *
      * @param array $params the parameters (name => value) to be bound to the query.
@@ -659,7 +659,7 @@ class Query extends Component implements QueryInterface
      * @param string|array $table the table to be joined.
      *
      * Use a string to represent the name of the table to be joined.
-     * The table name can contain a schema prefix (e.g. 'public.user') and/or table alias (e.g. 'user u').
+     * The table name can contain a schema prefix (e.g. 'public.admin') and/or table alias (e.g. 'admin u').
      * The method will automatically quote the table name unless it contains some parenthesis
      * (which means the table is given as a sub-query or DB expression).
      *
@@ -683,7 +683,7 @@ class Query extends Component implements QueryInterface
      * @param string|array $table the table to be joined.
      *
      * Use a string to represent the name of the table to be joined.
-     * The table name can contain a schema prefix (e.g. 'public.user') and/or table alias (e.g. 'user u').
+     * The table name can contain a schema prefix (e.g. 'public.admin') and/or table alias (e.g. 'admin u').
      * The method will automatically quote the table name unless it contains some parenthesis
      * (which means the table is given as a sub-query or DB expression).
      *
@@ -707,7 +707,7 @@ class Query extends Component implements QueryInterface
      * @param string|array $table the table to be joined.
      *
      * Use a string to represent the name of the table to be joined.
-     * The table name can contain a schema prefix (e.g. 'public.user') and/or table alias (e.g. 'user u').
+     * The table name can contain a schema prefix (e.g. 'public.admin') and/or table alias (e.g. 'admin u').
      * The method will automatically quote the table name unless it contains some parenthesis
      * (which means the table is given as a sub-query or DB expression).
      *

@@ -49,7 +49,7 @@ function phorum_htmlpurifier_migrate_sigs($offset)
         list($fake_message) = phorum_htmlpurifier_migrate($fake_data);
         $user['signature'] = $fake_message['body'];
         if (!phorum_api_user_save($user)) {
-            exit('Error while saving user data');
+            exit('Error while saving admin data');
         }
     }
     unset($userinfos); // free up memory

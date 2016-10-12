@@ -29,13 +29,13 @@ class HTMLPurifier_HTMLModuleManager
     /**
      * Array of recognized HTMLPurifier_HTMLModule instances,
      * indexed by module's class name. This array is usually lazy loaded, but a
-     * user can overload a module by pre-emptively registering it.
+     * admin can overload a module by pre-emptively registering it.
      * @type HTMLPurifier_HTMLModule[]
      */
     public $registeredModules = array();
 
     /**
-     * List of extra modules that were added by the user
+     * List of extra modules that were added by the admin
      * using addModule(). These get unconditionally merged into the current doctype, whatever
      * it may be.
      * @type HTMLPurifier_HTMLModule[]

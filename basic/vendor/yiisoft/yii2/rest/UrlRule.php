@@ -20,36 +20,36 @@ use yii\web\CompositeUrlRule;
  * ```php
  * [
  *     'class' => 'yii\rest\UrlRule',
- *     'controller' => 'user',
+ *     'controller' => 'admin',
  * ]
  * ```
  *
  * The above code will create a whole set of URL rules supporting the following RESTful API endpoints:
  *
- * - `'PUT,PATCH users/<id>' => 'user/update'`: update a user
- * - `'DELETE users/<id>' => 'user/delete'`: delete a user
- * - `'GET,HEAD users/<id>' => 'user/view'`: return the details/overview/options of a user
- * - `'POST users' => 'user/create'`: create a new user
- * - `'GET,HEAD users' => 'user/index'`: return a list/overview/options of users
- * - `'users/<id>' => 'user/options'`: process all unhandled verbs of a user
- * - `'users' => 'user/options'`: process all unhandled verbs of user collection
+ * - `'PUT,PATCH users/<id>' => 'admin/update'`: update a admin
+ * - `'DELETE users/<id>' => 'admin/delete'`: delete a admin
+ * - `'GET,HEAD users/<id>' => 'admin/view'`: return the details/overview/options of a admin
+ * - `'POST users' => 'admin/create'`: create a new admin
+ * - `'GET,HEAD users' => 'admin/index'`: return a list/overview/options of users
+ * - `'users/<id>' => 'admin/options'`: process all unhandled verbs of a admin
+ * - `'users' => 'admin/options'`: process all unhandled verbs of admin collection
  *
  * You may configure [[only]] and/or [[except]] to disable some of the above rules.
  * You may configure [[patterns]] to completely redefine your own list of rules.
  * You may configure [[controller]] with multiple controller IDs to generate rules for all these controllers.
- * For example, the following code will disable the `delete` rule and generate rules for both `user` and `post` controllers:
+ * For example, the following code will disable the `delete` rule and generate rules for both `admin` and `post` controllers:
  *
  * ```php
  * [
  *     'class' => 'yii\rest\UrlRule',
- *     'controller' => ['user', 'post'],
+ *     'controller' => ['admin', 'post'],
  *     'except' => ['delete'],
  * ]
  * ```
  *
  * The property [[controller]] is required and should represent one or multiple controller IDs.
  * Each controller ID should be prefixed with the module ID if the controller is within a module.
- * The controller ID used in the pattern will be automatically pluralized (e.g. `user` becomes `users`
+ * The controller ID used in the pattern will be automatically pluralized (e.g. `admin` becomes `users`
  * as shown in the above examples).
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -66,16 +66,16 @@ class UrlRule extends CompositeUrlRule
      */
     public $suffix;
     /**
-     * @var string|array the controller ID (e.g. `user`, `post-comment`) that the rules in this composite rule
-     * are dealing with. It should be prefixed with the module ID if the controller is within a module (e.g. `admin/user`).
+     * @var string|array the controller ID (e.g. `admin`, `post-comment`) that the rules in this composite rule
+     * are dealing with. It should be prefixed with the module ID if the controller is within a module (e.g. `admin/admin`).
      *
      * By default, the controller ID will be pluralized automatically when it is put in the patterns of the
      * generated rules. If you want to explicitly specify how the controller ID should appear in the patterns,
      * you may use an array with the array key being as the controller ID in the pattern, and the array value
-     * the actual controller ID. For example, `['u' => 'user']`.
+     * the actual controller ID. For example, `['u' => 'admin']`.
      *
      * You may also pass multiple controller IDs as an array. If this is the case, this composite rule will
-     * generate applicable URL rules for EVERY specified controller. For example, `['user', 'post']`.
+     * generate applicable URL rules for EVERY specified controller. For example, `['admin', 'post']`.
      */
     public $controller;
     /**
@@ -129,7 +129,7 @@ class UrlRule extends CompositeUrlRule
     ];
     /**
      * @var boolean whether to automatically pluralize the URL names for controllers.
-     * If true, a controller ID will appear in plural form in URLs. For example, `user` controller
+     * If true, a controller ID will appear in plural form in URLs. For example, `admin` controller
      * will appear as `users` in URLs.
      * @see controller
      */

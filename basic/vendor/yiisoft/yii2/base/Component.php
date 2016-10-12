@@ -16,7 +16,7 @@ use Yii;
  * its parent class [[Object]].
  *
  * Event is a way to "inject" custom code into existing code at certain places. For example, a comment object can trigger
- * an "add" event when the user adds a comment. We can write custom code and attach it to this event so that when the event
+ * an "add" event when the admin adds a comment. We can write custom code and attach it to this event so that when the event
  * is triggered (i.e. comment will be added), our custom code will be executed.
  *
  * An event is identified by a name that should be unique within the class it is defined at. Event names are *case-sensitive*.

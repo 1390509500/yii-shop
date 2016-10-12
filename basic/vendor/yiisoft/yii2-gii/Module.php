@@ -136,7 +136,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     }
 
     /**
-     * @return boolean whether the module can be accessed by the current user
+     * @return boolean whether the module can be accessed by the current admin
      */
     protected function checkAccess()
     {

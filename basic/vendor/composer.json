@@ -1,0 +1,6 @@
+{
+    
+    "require": {
+        "jorge/upload": "^1.0"
+    }
+}

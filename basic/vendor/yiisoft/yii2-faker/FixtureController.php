@@ -48,17 +48,17 @@ use yii\helpers\VarDumper;
  * If you use callback as an attribute value it will be called with the following three parameters:
  *
  * - `$faker`: the Faker generator instance
- * - `$index`: the current fixture index. For example if user need to generate 3 fixtures for user table, it will be 0..2.
+ * - `$index`: the current fixture index. For example if admin need to generate 3 fixtures for admin table, it will be 0..2.
  *
  * After you set all needed fields in callback, you need to return $fixture array back from the callback.
  *
  * After you prepared needed templates for tables you can simply generate your fixtures via command
  *
  * ~~~
- * yii fixture/generate user
+ * yii fixture/generate admin
  *
  * //generate fixtures from several templates, for example:
- * yii fixture/generate user profile team
+ * yii fixture/generate admin profile team
  * ~~~
  *
  * In the code above "users" is template name, after this command run, new file named same as template
@@ -83,7 +83,7 @@ use yii\helpers\VarDumper;
  *
  * ~~~
  * //generate fixtures in russian language
- * yii fixture/generate user --count=5 --language=ru_RU
+ * yii fixture/generate admin --count=5 --language=ru_RU
  *
  * //read templates from the other path
  * yii fixture/generate-all --templatePath=@app/path/to/my/custom/templates
@@ -155,7 +155,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
      */
     public $count = 2;
     /**
-     * @var array Additional data providers that can be created by user and will be added to the Faker generator.
+     * @var array Additional data providers that can be created by admin and will be added to the Faker generator.
      * More info in [Faker](https://github.com/fzaninotto/Faker.) library docs.
      */
     public $providers = [];
@@ -207,10 +207,10 @@ class FixtureController extends \yii\console\controllers\FixtureController
      * 
      * ~~~
      * //generate fixtures in russian language
-     * yii fixture/generate user --count=5 --language=ru_RU
+     * yii fixture/generate admin --count=5 --language=ru_RU
      *
      * //generate several fixtures
-     * yii fixture/generate user profile team
+     * yii fixture/generate admin profile team
      * ~~~
      * 
      * @throws \yii\base\InvalidParamException
@@ -288,7 +288,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     }
 
     /**
-     * Notifies user that given fixtures template files were not found.
+     * Notifies admin that given fixtures template files were not found.
      * @param array $templatesNames
      */
     private function notifyNotFoundTemplates($templatesNames)
@@ -303,7 +303,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     }
 
     /**
-     * Notifies user that there was not found any files matching given input conditions.
+     * Notifies admin that there was not found any files matching given input conditions.
      */
     private function notifyNoTemplatesFound()
     {
@@ -312,7 +312,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     }
 
     /**
-     * Notifies user that given fixtures template files were generated.
+     * Notifies admin that given fixtures template files were generated.
      * @param array $templatesNames
      */
     private function notifyTemplatesGenerated($templatesNames)
@@ -447,7 +447,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     }
 
     /**
-     * Prompts user with message if he confirm generation with given fixture templates files.
+     * Prompts admin with message if he confirm generation with given fixture templates files.
      * @param array $files
      * @return boolean
      */

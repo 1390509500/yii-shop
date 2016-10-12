@@ -170,7 +170,7 @@ class CacheController extends Controller
     }
 
     /**
-     * Notifies user that given caches are found and can be flushed.
+     * Notifies admin that given caches are found and can be flushed.
      * @param array $caches array of cache component classes
      */
     private function notifyCachesCanBeFlushed($caches)
@@ -185,7 +185,7 @@ class CacheController extends Controller
     }
 
     /**
-     * Notifies user that there was not found any cache in the system.
+     * Notifies admin that there was not found any cache in the system.
      */
     private function notifyNoCachesFound()
     {
@@ -193,7 +193,7 @@ class CacheController extends Controller
     }
 
     /**
-     * Notifies user that given cache components were not found in the system.
+     * Notifies admin that given cache components were not found in the system.
      * @param array $cachesNames
      */
     private function notifyNotFoundCaches($cachesNames)
@@ -229,7 +229,7 @@ class CacheController extends Controller
     }
 
     /**
-     * Prompts user with confirmation if caches should be flushed.
+     * Prompts admin with confirmation if caches should be flushed.
      * @param array $cachesNames
      * @return boolean
      */

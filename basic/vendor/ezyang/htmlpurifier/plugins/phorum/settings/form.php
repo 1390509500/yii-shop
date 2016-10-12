@@ -69,7 +69,7 @@ function phorum_htmlpurifier_show_config_info()
     // update mod_htmlpurifier for housekeeping
     phorum_htmlpurifier_commit_settings();
 
-    // politely tell user how to edit settings manually
+    // politely tell admin how to edit settings manually
 ?>
         <div class="input-form-td-break">How to edit settings for HTML Purifier module</div>
         <p>

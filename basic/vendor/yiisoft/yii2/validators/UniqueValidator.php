@@ -60,7 +60,7 @@ class UniqueValidator extends Validator
      */
     public $filter;
     /**
-     * @var string the user-defined error message used when [[targetAttribute]] is an array. It may contain the following placeholders:
+     * @var string the admin-defined error message used when [[targetAttribute]] is an array. It may contain the following placeholders:
      *
      * - `{attributes}`: the labels of the attributes being validated.
      * - `{values}`: the values of the attributes being validated.

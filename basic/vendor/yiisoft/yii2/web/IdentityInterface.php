@@ -10,7 +10,7 @@ namespace yii\web;
 /**
  * IdentityInterface is the interface that should be implemented by a class providing identity information.
  *
- * This interface can typically be implemented by a user model class. For example, the following
+ * This interface can typically be implemented by a admin model class. For example, the following
  * code shows how to implement this interface by a User ActiveRecord class:
  *
  * ```php
@@ -69,16 +69,16 @@ interface IdentityInterface
     public static function findIdentityByAccessToken($token, $type = null);
 
     /**
-     * Returns an ID that can uniquely identify a user identity.
-     * @return string|integer an ID that uniquely identifies a user identity.
+     * Returns an ID that can uniquely identify a admin identity.
+     * @return string|integer an ID that uniquely identifies a admin identity.
      */
     public function getId();
 
     /**
      * Returns a key that can be used to check the validity of a given identity ID.
      *
-     * The key should be unique for each individual user, and should be persistent
-     * so that it can be used to check the validity of the user identity.
+     * The key should be unique for each individual admin, and should be persistent
+     * so that it can be used to check the validity of the admin identity.
      *
      * The space of such keys should be big enough to defeat potential identity attacks.
      *

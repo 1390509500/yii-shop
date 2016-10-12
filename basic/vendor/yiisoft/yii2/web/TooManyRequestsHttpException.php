@@ -12,7 +12,7 @@ namespace yii\web;
  *
  * Use this exception to indicate that a client has made too many requests in a
  * given period of time. For example, you would throw this exception when
- * 'throttling' an API user.
+ * 'throttling' an API admin.
  *
  * @link http://tools.ietf.org/search/rfc6585#section-4
  * @author Dan Schmidt <danschmidt5189@gmail.com>

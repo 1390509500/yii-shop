@@ -1,0 +1,6 @@
+.DS_STORE
+composer.lock
+.idea
+src/test/*
+!src/test/
+!src/test/empty

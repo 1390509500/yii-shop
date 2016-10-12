@@ -18,7 +18,7 @@ use yii\web\ForbiddenHttpException;
  * AccessControl provides simple access control based on a set of rules.
  *
  * AccessControl is an action filter. It will check its [[rules]] to find
- * the first rule that matches the current context variables (such as user IP address, user role).
+ * the first rule that matches the current context variables (such as admin IP address, admin role).
  * The matching rule will dictate whether to allow or deny the access to the requested controller
  * action. If no rule matches, the access will be denied.
  *
@@ -57,13 +57,13 @@ use yii\web\ForbiddenHttpException;
 class AccessControl extends ActionFilter
 {
     /**
-     * @var User|array|string the user object representing the authentication status or the ID of the user application component.
+     * @var User|array|string the admin object representing the authentication status or the ID of the admin application component.
      * Starting from version 2.0.2, this can also be a configuration array for creating the object.
      */
-    public $user = 'user';
+    public $user = 'admin';
     /**
      * @var callable a callback that will be called if the access should be denied
-     * to the current user. If not set, [[denyAccess()]] will be called.
+     * to the current admin. If not set, [[denyAccess()]] will be called.
      *
      * The signature of the callback should be as follows:
      *
@@ -71,7 +71,7 @@ class AccessControl extends ActionFilter
      * function ($rule, $action)
      * ```
      *
-     * where `$rule` is the rule that denies the user, and `$action` is the current [[Action|action]] object.
+     * where `$rule` is the rule that denies the admin, and `$action` is the current [[Action|action]] object.
      * `$rule` can be `null` if access is denied because none of the rules matched.
      */
     public $denyCallback;
@@ -137,11 +137,11 @@ class AccessControl extends ActionFilter
     }
 
     /**
-     * Denies the access of the user.
-     * The default implementation will redirect the user to the login page if he is a guest;
-     * if the user is already logged, a 403 HTTP exception will be thrown.
-     * @param User $user the current user
-     * @throws ForbiddenHttpException if the user is already logged in.
+     * Denies the access of the admin.
+     * The default implementation will redirect the admin to the login page if he is a guest;
+     * if the admin is already logged, a 403 HTTP exception will be thrown.
+     * @param User $user the current admin
+     * @throws ForbiddenHttpException if the admin is already logged in.
      */
     protected function denyAccess($user)
     {

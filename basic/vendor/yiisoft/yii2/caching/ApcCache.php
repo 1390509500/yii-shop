@@ -154,6 +154,6 @@ class ApcCache extends Cache
      */
     protected function flushValues()
     {
-        return $this->useApcu ? apcu_clear_cache() : apc_clear_cache('user');
+        return $this->useApcu ? apcu_clear_cache() : apc_clear_cache('admin');
     }
 }

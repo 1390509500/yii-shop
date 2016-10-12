@@ -12,7 +12,7 @@ use yii\base\Action;
 use yii\base\InvalidParamException;
 
 /**
- * ViewAction represents an action that displays a view according to a user-specified parameter.
+ * ViewAction represents an action that displays a view according to a admin-specified parameter.
  *
  * By default, the view being displayed is specified via the `view` GET parameter.
  * The name of the GET parameter can be customized via [[viewParam]].
@@ -21,7 +21,7 @@ use yii\base\InvalidParamException;
  * `ViewPrefix/path/to/view` where `ViewPrefix` is given by [[viewPrefix]]. The view will then
  * be rendered by the [[\yii\base\Controller::render()|render()]] method of the currently active controller.
  *
- * Note that the user-specified view name must start with a word character and can only contain
+ * Note that the admin-specified view name must start with a word character and can only contain
  * word characters, forward slashes, dots and dashes.
  *
  * @author Alexander Makarov <sam@rmcreative.ru>
@@ -36,14 +36,14 @@ class ViewAction extends Action
     public $viewParam = 'view';
     /**
      * @var string the name of the default view when [[\yii\web\ViewAction::$viewParam]] GET parameter is not provided
-     * by user. Defaults to 'index'. This should be in the format of 'path/to/view', similar to that given in the
+     * by admin. Defaults to 'index'. This should be in the format of 'path/to/view', similar to that given in the
      * GET parameter.
      * @see \yii\web\ViewAction::$viewPrefix
      */
     public $defaultView = 'index';
     /**
-     * @var string a string to be prefixed to the user-specified view name to form a complete view name.
-     * For example, if a user requests for `tutorial/chap1`, the corresponding view name will
+     * @var string a string to be prefixed to the admin-specified view name to form a complete view name.
+     * For example, if a admin requests for `tutorial/chap1`, the corresponding view name will
      * be `pages/tutorial/chap1`, assuming the prefix is `pages`.
      * The actual view file is determined by [[\yii\base\View::findViewFile()]].
      * @see \yii\base\View::findViewFile()
@@ -60,7 +60,7 @@ class ViewAction extends Action
 
     /**
      * Runs the action.
-     * This method displays the view requested by the user.
+     * This method displays the view requested by the admin.
      * @throws NotFoundHttpException if the view file cannot be found
      */
     public function run()

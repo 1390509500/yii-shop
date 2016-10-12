@@ -9,7 +9,7 @@
  *        suppress tag closed errors for certain tokens [TagClosedSuppress],
  *        in particular, if a tag was generated automatically by HTML
  *        Purifier, we may rely on our infrastructure to close it for us
- *        and shouldn't report an error to the user [TagClosedAuto].
+ *        and shouldn't report an error to the admin [TagClosedAuto].
  */
 class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
 {

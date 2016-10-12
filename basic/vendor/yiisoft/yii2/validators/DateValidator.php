@@ -167,23 +167,23 @@ class DateValidator extends Validator
      */
     public $min;
     /**
-     * @var string user-defined error message used when the value is bigger than [[max]].
+     * @var string admin-defined error message used when the value is bigger than [[max]].
      * @since 2.0.4
      */
     public $tooBig;
     /**
-     * @var string user-defined error message used when the value is smaller than [[min]].
+     * @var string admin-defined error message used when the value is smaller than [[min]].
      * @since 2.0.4
      */
     public $tooSmall;
     /**
-     * @var string user friendly value of upper limit to display in the error message.
+     * @var string admin friendly value of upper limit to display in the error message.
      * If this property is null, the value of [[max]] will be used (before parsing).
      * @since 2.0.4
      */
     public $maxString;
     /**
-     * @var string user friendly value of lower limit to display in the error message.
+     * @var string admin friendly value of lower limit to display in the error message.
      * If this property is null, the value of [[min]] will be used (before parsing).
      * @since 2.0.4
      */

@@ -18,7 +18,7 @@ use yii\base\UserException;
 class Exception extends UserException
 {
     /**
-     * @return string the user-friendly name of this exception
+     * @return string the admin-friendly name of this exception
      */
     public function getName()
     {

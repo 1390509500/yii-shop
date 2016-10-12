@@ -24,7 +24,7 @@ use yii\web\Response;
 abstract class AuthMethod extends ActionFilter implements AuthInterface
 {
     /**
-     * @var User the user object representing the user authentication status. If not set, the `user` application component will be used.
+     * @var User the admin object representing the admin authentication status. If not set, the `admin` application component will be used.
      */
     public $user;
     /**

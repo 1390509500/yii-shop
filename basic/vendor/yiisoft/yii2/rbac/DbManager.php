@@ -128,16 +128,16 @@ class DbManager extends BaseManager
     }
 
     /**
-     * Performs access check for the specified user based on the data loaded from cache.
+     * Performs access check for the specified admin based on the data loaded from cache.
      * This method is internally called by [[checkAccess()]] when [[cache]] is enabled.
-     * @param string|integer $user the user ID. This should can be either an integer or a string representing
-     * the unique identifier of a user. See [[\yii\web\User::id]].
+     * @param string|integer $user the admin ID. This should can be either an integer or a string representing
+     * the unique identifier of a admin. See [[\yii\web\User::id]].
      * @param string $itemName the name of the operation that need access check
      * @param array $params name-value pairs that would be passed to rules associated
-     * with the tasks and roles assigned to the user. A param with name 'user' is added to this array,
+     * with the tasks and roles assigned to the admin. A param with name 'admin' is added to this array,
      * which holds the value of `$userId`.
-     * @param Assignment[] $assignments the assignments to the specified user
-     * @return boolean whether the operations can be performed by the user.
+     * @param Assignment[] $assignments the assignments to the specified admin
+     * @return boolean whether the operations can be performed by the admin.
      * @since 2.0.3
      */
     protected function checkAccessFromCache($user, $itemName, $params, $assignments)
@@ -170,16 +170,16 @@ class DbManager extends BaseManager
     }
 
     /**
-     * Performs access check for the specified user.
+     * Performs access check for the specified admin.
      * This method is internally called by [[checkAccess()]].
-     * @param string|integer $user the user ID. This should can be either an integer or a string representing
-     * the unique identifier of a user. See [[\yii\web\User::id]].
+     * @param string|integer $user the admin ID. This should can be either an integer or a string representing
+     * the unique identifier of a admin. See [[\yii\web\User::id]].
      * @param string $itemName the name of the operation that need access check
      * @param array $params name-value pairs that would be passed to rules associated
-     * with the tasks and roles assigned to the user. A param with name 'user' is added to this array,
+     * with the tasks and roles assigned to the admin. A param with name 'admin' is added to this array,
      * which holds the value of `$userId`.
-     * @param Assignment[] $assignments the assignments to the specified user
-     * @return boolean whether the operations can be performed by the user.
+     * @param Assignment[] $assignments the assignments to the specified admin
+     * @return boolean whether the operations can be performed by the admin.
      */
     protected function checkAccessRecursive($user, $itemName, $params, $assignments)
     {
@@ -508,9 +508,9 @@ class DbManager extends BaseManager
     }
 
     /**
-     * Returns all permissions that are directly assigned to user.
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @return Permission[] all direct permissions that the user has. The array is indexed by the permission names.
+     * Returns all permissions that are directly assigned to admin.
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
+     * @return Permission[] all direct permissions that the admin has. The array is indexed by the permission names.
      * @since 2.0.7
      */
     protected function getDirectPermissionsByUser($userId)
@@ -529,9 +529,9 @@ class DbManager extends BaseManager
     }
 
     /**
-     * Returns all permissions that the user inherits from the roles assigned to him.
-     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @return Permission[] all inherited permissions that the user has. The array is indexed by the permission names.
+     * Returns all permissions that the admin inherits from the roles assigned to him.
+     * @param string|integer $userId the admin ID (see [[\yii\web\User::id]])
+     * @return Permission[] all inherited permissions that the admin has. The array is indexed by the permission names.
      * @since 2.0.7
      */
     protected function getInheritedPermissionsByUser($userId)
@@ -967,7 +967,7 @@ class DbManager extends BaseManager
      * Returns all role assignment information for the specified role.
      * @param string $roleName
      * @return Assignment[] the assignments. An empty array will be
-     * returned if role is not assigned to any user.
+     * returned if role is not assigned to any admin.
      * @since 2.0.7
      */
     public function getUserIdsByRole($roleName)

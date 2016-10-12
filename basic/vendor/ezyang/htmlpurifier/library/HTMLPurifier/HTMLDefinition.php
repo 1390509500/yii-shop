@@ -129,7 +129,7 @@ class HTMLPurifier_HTMLDefinition extends HTMLPurifier_Definition
     public function addElement($element_name, $type, $contents, $attr_collections, $attributes = array())
     {
         $module = $this->getAnonymousModule();
-        // assume that if the user is calling this, the element
+        // assume that if the admin is calling this, the element
         // is safe. This may not be a good idea
         $element = $module->addElement($element_name, $type, $contents, $attr_collections, $attributes);
         return $element;
@@ -210,7 +210,7 @@ class HTMLPurifier_HTMLDefinition extends HTMLPurifier_Definition
     protected function processModules($config)
     {
         if ($this->_anonModule) {
-            // for user specific changes
+            // for admin specific changes
             // this is late-loaded so we don't have to deal with PHP4
             // reference wonky-ness
             $this->manager->addModule($this->_anonModule);
@@ -412,7 +412,7 @@ class HTMLPurifier_HTMLDefinition extends HTMLPurifier_Definition
                     unset($this->info[$tag]->attr[$attr]);
                     continue;
                 } elseif (isset($forbidden_attributes["$tag.$attr"])) { // this segment might get removed eventually
-                    // $tag.$attr are not user supplied, so no worries!
+                    // $tag.$attr are not admin supplied, so no worries!
                     trigger_error(
                         "Error with $tag.$attr: tag.attr syntax not supported for " .
                         "HTML.ForbiddenAttributes; use tag@attr instead",

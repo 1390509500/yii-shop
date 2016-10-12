@@ -23,10 +23,10 @@ defined('STDERR') or define('STDERR', fopen('php://stderr', 'w'));
  * specific to console requests. In particular, it deals with console requests
  * through a command-based approach:
  *
- * - A console application consists of one or several possible user commands;
- * - Each user command is implemented as a class extending [[\yii\console\Controller]];
+ * - A console application consists of one or several possible admin commands;
+ * - Each admin command is implemented as a class extending [[\yii\console\Controller]];
  * - User specifies which command to run on the command line;
- * - The command processes the user request with the specified parameters.
+ * - The command processes the admin request with the specified parameters.
  *
  * The command classes should be under the namespace specified by [[controllerNamespace]].
  * Their naming should follow the same naming convention as controllers. For example, the `help` command

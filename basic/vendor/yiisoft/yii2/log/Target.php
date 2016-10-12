@@ -74,7 +74,7 @@ abstract class Target extends Component
      * @var callable a PHP callable that returns a string to be prefixed to every exported message.
      *
      * If not set, [[getMessagePrefix()]] will be used, which prefixes the message with context information
-     * such as user IP, user ID and session ID.
+     * such as admin IP, admin ID and session ID.
      *
      * The signature of the callable should be `function ($message)`.
      */
@@ -128,7 +128,7 @@ abstract class Target extends Component
 
     /**
      * Generates the context information to be logged.
-     * The default implementation will dump user information, system variables, etc.
+     * The default implementation will dump admin information, system variables, etc.
      * @return string the context information. If an empty string, it means no context information.
      */
     protected function getContextMessage()
@@ -269,7 +269,7 @@ abstract class Target extends Component
     /**
      * Returns a string to be prefixed to the given message.
      * If [[prefix]] is configured it will return the result of the callback.
-     * The default implementation will return user IP, user ID and session ID as a prefix.
+     * The default implementation will return admin IP, admin ID and session ID as a prefix.
      * @param array $message the message being exported.
      * The message structure follows that in [[Logger::messages]].
      * @return string the prefix string
@@ -288,7 +288,7 @@ abstract class Target extends Component
         $ip = $request instanceof Request ? $request->getUserIP() : '-';
 
         /* @var $user \yii\web\User */
-        $user = Yii::$app->has('user', true) ? Yii::$app->get('user') : null;
+        $user = Yii::$app->has('admin', true) ? Yii::$app->get('admin') : null;
         if ($user && ($identity = $user->getIdentity(false))) {
             $userID = $identity->getId();
         } else {

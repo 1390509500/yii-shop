@@ -14,7 +14,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 
 /**
- * InputWidget is the base class for widgets that collect user inputs.
+ * InputWidget is the base class for widgets that collect admin inputs.
  *
  * An input widget can be associated with a data model and an attribute,
  * or a name and a value. If the former, the name and the value will

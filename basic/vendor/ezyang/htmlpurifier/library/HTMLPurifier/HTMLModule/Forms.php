@@ -147,7 +147,7 @@ class HTMLPurifier_HTMLModule_Forms extends HTMLPurifier_HTMLModule
         // We'll omit this for now, since we don't have any good way of
         // indicating it yet.
 
-        // This is HIGHLY user-unfriendly; we need a custom child-def for this
+        // This is HIGHLY admin-unfriendly; we need a custom child-def for this
         $this->addElement('fieldset', 'Form', 'Custom: (#WS?,legend,(Flow|#PCDATA)*)', 'Common');
 
         $label = $this->addElement(

@@ -21,7 +21,7 @@
  */
 
 // Note: Cache data is base64 encoded because Phorum insists on flinging
-// to the user and expecting it to come back unharmed, newlines and
+// to the admin and expecting it to come back unharmed, newlines and
 // all, which ain't happening. It's slower, it takes up more space, but
 // at least it won't get mutilated
 
@@ -129,9 +129,9 @@ function phorum_htmlpurifier_format($data)
 function phorum_htmlpurifier_generate_sig($row)
 {
     $phorum_sig = '';
-    if(isset($row["user"]["signature"])
+    if(isset($row["admin"]["signature"])
        && isset($row['meta']['show_signature']) && $row['meta']['show_signature']==1){
-           $phorum_sig=trim($row["user"]["signature"]);
+           $phorum_sig=trim($row["admin"]["signature"]);
            if(!empty($phorum_sig)){
                $phorum_sig="\n\n$phorum_sig";
            }

@@ -131,7 +131,7 @@ class QueryBuilder extends \yii\base\Object
      * For example,
      *
      * ```php
-     * $sql = $queryBuilder->insert('user', [
+     * $sql = $queryBuilder->insert('admin', [
      *     'name' => 'Sam',
      *     'age' => 30,
      * ], $params);
@@ -179,7 +179,7 @@ class QueryBuilder extends \yii\base\Object
      * For example,
      *
      * ```php
-     * $sql = $queryBuilder->batchInsert('user', ['name', 'age'], [
+     * $sql = $queryBuilder->batchInsert('admin', ['name', 'age'], [
      *     ['Tom', 30],
      *     ['Jane', 20],
      *     ['Linda', 25],
@@ -241,7 +241,7 @@ class QueryBuilder extends \yii\base\Object
      *
      * ```php
      * $params = [];
-     * $sql = $queryBuilder->update('user', ['status' => 1], 'age > 30', $params);
+     * $sql = $queryBuilder->update('admin', ['status' => 1], 'age > 30', $params);
      * ```
      *
      * The method will properly escape the table and column names.
@@ -287,7 +287,7 @@ class QueryBuilder extends \yii\base\Object
      * For example,
      *
      * ```php
-     * $sql = $queryBuilder->delete('user', 'status = 0');
+     * $sql = $queryBuilder->delete('admin', 'status = 0');
      * ```
      *
      * The method will properly escape the table and column names.
@@ -321,7 +321,7 @@ class QueryBuilder extends \yii\base\Object
      * For example,
      *
      * ```php
-     * $sql = $queryBuilder->createTable('user', [
+     * $sql = $queryBuilder->createTable('admin', [
      *  'id' => 'pk',
      *  'name' => 'string',
      *  'age' => 'integer',

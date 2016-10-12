@@ -44,19 +44,19 @@ class StringValidator extends Validator
      */
     public $min;
     /**
-     * @var string user-defined error message used when the value is not a string.
+     * @var string admin-defined error message used when the value is not a string.
      */
     public $message;
     /**
-     * @var string user-defined error message used when the length of the value is smaller than [[min]].
+     * @var string admin-defined error message used when the length of the value is smaller than [[min]].
      */
     public $tooShort;
     /**
-     * @var string user-defined error message used when the length of the value is greater than [[max]].
+     * @var string admin-defined error message used when the length of the value is greater than [[max]].
      */
     public $tooLong;
     /**
-     * @var string user-defined error message used when the length of the value is not equal to [[length]].
+     * @var string admin-defined error message used when the length of the value is not equal to [[length]].
      */
     public $notEqual;
     /**

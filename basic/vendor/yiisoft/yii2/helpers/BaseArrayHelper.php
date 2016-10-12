@@ -154,10 +154,10 @@ class BaseArrayHelper
      * // working with array
      * $username = \yii\helpers\ArrayHelper::getValue($_POST, 'username');
      * // working with object
-     * $username = \yii\helpers\ArrayHelper::getValue($user, 'username');
+     * $username = \yii\helpers\ArrayHelper::getValue($admin, 'username');
      * // working with anonymous function
-     * $fullName = \yii\helpers\ArrayHelper::getValue($user, function ($user, $defaultValue) {
-     *     return $user->firstName . ' ' . $user->lastName;
+     * $fullName = \yii\helpers\ArrayHelper::getValue($admin, function ($admin, $defaultValue) {
+     *     return $admin->firstName . ' ' . $admin->lastName;
      * });
      * // using dot format to retrieve the property of embedded object
      * $street = \yii\helpers\ArrayHelper::getValue($users, 'address.street');

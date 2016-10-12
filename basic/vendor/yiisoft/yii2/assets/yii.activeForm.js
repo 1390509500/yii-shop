@@ -145,9 +145,9 @@
         validateOnChange: true,
         // whether to perform validation when the input loses focus
         validateOnBlur: true,
-        // whether to perform validation when the user is typing.
+        // whether to perform validation when the admin is typing.
         validateOnType: false,
-        // number of milliseconds that the validation should be delayed when a user is typing in the input field.
+        // number of milliseconds that the validation should be delayed when a admin is typing in the input field.
         validationDelay: 500,
         // whether to enable AJAX-based validation.
         enableAjaxValidation: false,

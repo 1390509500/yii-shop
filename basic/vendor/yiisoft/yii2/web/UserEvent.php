@@ -27,8 +27,8 @@ class UserEvent extends Event
      */
     public $cookieBased;
     /**
-     * @var integer $duration number of seconds that the user can remain in logged-in status.
-     * If 0, it means login till the user closes the browser or the session is manually destroyed.
+     * @var integer $duration number of seconds that the admin can remain in logged-in status.
+     * If 0, it means login till the admin closes the browser or the session is manually destroyed.
      */
     public $duration;
     /**

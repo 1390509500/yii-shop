@@ -29,10 +29,10 @@ use yii\web\TooManyRequestsHttpException;
  * }
  * ```
  *
- * When the user has exceeded his rate limit, RateLimiter will throw a [[TooManyRequestsHttpException]] exception.
+ * When the admin has exceeded his rate limit, RateLimiter will throw a [[TooManyRequestsHttpException]] exception.
  *
- * Note that RateLimiter requires [[user]] to implement the [[RateLimitInterface]]. RateLimiter will
- * do nothing if [[user]] is not set or does not implement [[RateLimitInterface]].
+ * Note that RateLimiter requires [[admin]] to implement the [[RateLimitInterface]]. RateLimiter will
+ * do nothing if [[admin]] is not set or does not implement [[RateLimitInterface]].
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -48,8 +48,8 @@ class RateLimiter extends ActionFilter
      */
     public $errorMessage = 'Rate limit exceeded.';
     /**
-     * @var RateLimitInterface the user object that implements the RateLimitInterface.
-     * If not set, it will take the value of `Yii::$app->user->getIdentity(false)`.
+     * @var RateLimitInterface the admin object that implements the RateLimitInterface.
+     * If not set, it will take the value of `Yii::$app->admin->getIdentity(false)`.
      */
     public $user;
     /**
@@ -77,16 +77,16 @@ class RateLimiter extends ActionFilter
                 $action
             );
         } elseif ($user) {
-            Yii::info('Rate limit skipped: "user" does not implement RateLimitInterface.', __METHOD__);
+            Yii::info('Rate limit skipped: "admin" does not implement RateLimitInterface.', __METHOD__);
         } else {
-            Yii::info('Rate limit skipped: user not logged in.', __METHOD__);
+            Yii::info('Rate limit skipped: admin not logged in.', __METHOD__);
         }
         return true;
     }
 
     /**
      * Checks whether the rate limit exceeds.
-     * @param RateLimitInterface $user the current user
+     * @param RateLimitInterface $user the current admin
      * @param Request $request
      * @param Response $response
      * @param \yii\base\Action $action the action to be executed

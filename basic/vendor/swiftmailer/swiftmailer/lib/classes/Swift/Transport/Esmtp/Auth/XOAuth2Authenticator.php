@@ -36,7 +36,7 @@ class Swift_Transport_Esmtp_Auth_XOAuth2Authenticator implements Swift_Transport
     }
 
     /**
-     * Try to authenticate the user with $email and $token.
+     * Try to authenticate the admin with $email and $token.
      *
      * @param Swift_Transport_SmtpAgent $agent
      * @param string                    $email
@@ -65,6 +65,6 @@ class Swift_Transport_Esmtp_Auth_XOAuth2Authenticator implements Swift_Transport
      */
     protected function constructXOAuth2Params($email, $token)
     {
-        return base64_encode("user=$email\1auth=Bearer $token\1\1");
+        return base64_encode("admin=$email\1auth=Bearer $token\1\1");
     }
 }

@@ -70,7 +70,7 @@ class ColumnTypeGuesser
                     return $generator->datetime;
                 };
             default:
-                // no smart way to guess what the user expects here
+                // no smart way to guess what the admin expects here
                 return null;
         }
     }

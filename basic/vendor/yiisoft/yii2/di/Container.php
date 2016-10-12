@@ -387,7 +387,7 @@ class Container extends Component
     }
 
     /**
-     * Merges the user-specified constructor parameters with the ones registered via [[set()]].
+     * Merges the admin-specified constructor parameters with the ones registered via [[set()]].
      * @param string $class class name, interface name or alias name
      * @param array $params the constructor parameters
      * @return array the merged parameters

@@ -14,44 +14,44 @@ use yii\base\InvalidValueException;
 use yii\rbac\CheckAccessInterface;
 
 /**
- * User is the class for the "user" application component that manages the user authentication status.
+ * User is the class for the "admin" application component that manages the admin authentication status.
  *
- * You may use [[isGuest]] to determine whether the current user is a guest or not.
- * If the user is a guest, the [[identity]] property would return null. Otherwise, it would
+ * You may use [[isGuest]] to determine whether the current admin is a guest or not.
+ * If the admin is a guest, the [[identity]] property would return null. Otherwise, it would
  * be an instance of [[IdentityInterface]].
  *
- * You may call various methods to change the user authentication status:
+ * You may call various methods to change the admin authentication status:
  *
  * - [[login()]]: sets the specified identity and remembers the authentication status in session and cookie.
- * - [[logout()]]: marks the user as a guest and clears the relevant information from session and cookie.
- * - [[setIdentity()]]: changes the user identity without touching session or cookie.
+ * - [[logout()]]: marks the admin as a guest and clears the relevant information from session and cookie.
+ * - [[setIdentity()]]: changes the admin identity without touching session or cookie.
  *   This is best used in stateless RESTful API implementation.
  *
- * Note that User only maintains the user authentication status. It does NOT handle how to authenticate
- * a user. The logic of how to authenticate a user should be done in the class implementing [[IdentityInterface]].
+ * Note that User only maintains the admin authentication status. It does NOT handle how to authenticate
+ * a admin. The logic of how to authenticate a admin should be done in the class implementing [[IdentityInterface]].
  * You are also required to set [[identityClass]] with the name of this class.
  *
  * User is configured as an application component in [[\yii\web\Application]] by default.
- * You can access that instance via `Yii::$app->user`.
+ * You can access that instance via `Yii::$app->admin`.
  *
  * You can modify its configuration by adding an array to your application config under `components`
  * as it is shown in the following example:
  *
  * ```php
- * 'user' => [
+ * 'admin' => [
  *     'identityClass' => 'app\models\User', // User must implement the IdentityInterface
  *     'enableAutoLogin' => true,
- *     // 'loginUrl' => ['user/login'],
+ *     // 'loginUrl' => ['admin/login'],
  *     // ...
  * ]
  * ```
  *
- * @property string|integer $id The unique identifier for the user. If null, it means the user is a guest.
+ * @property string|integer $id The unique identifier for the admin. If null, it means the admin is a guest.
  * This property is read-only.
  * @property IdentityInterface|null $identity The identity object associated with the currently logged-in
- * user. `null` is returned if the user is not logged in (not authenticated).
- * @property boolean $isGuest Whether the current user is a guest. This property is read-only.
- * @property string $returnUrl The URL that the user should be redirected to after login. Note that the type
+ * admin. `null` is returned if the admin is not logged in (not authenticated).
+ * @property boolean $isGuest Whether the current admin is a guest. This property is read-only.
+ * @property string $returnUrl The URL that the admin should be redirected to after login. Note that the type
  * of this property differs in getter and setter. See [[getReturnUrl()]] and [[setReturnUrl()]] for details.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -98,8 +98,8 @@ class User extends Component
      */
     public $identityCookie = ['name' => '_identity', 'httpOnly' => true];
     /**
-     * @var integer the number of seconds in which the user will be logged out automatically if he
-     * remains inactive. If this property is not set, the user will be logged out after
+     * @var integer the number of seconds in which the admin will be logged out automatically if he
+     * remains inactive. If this property is not set, the admin will be logged out after
      * the current session expires (c.f. [[Session::timeout]]).
      * Note that this will not work if [[enableAutoLogin]] is true.
      */
@@ -111,7 +111,7 @@ class User extends Component
      */
     public $accessChecker;
     /**
-     * @var integer the number of seconds in which the user will be logged out automatically
+     * @var integer the number of seconds in which the admin will be logged out automatically
      * regardless of activity.
      * Note that this will not work if [[enableAutoLogin]] is true.
      */
@@ -119,9 +119,9 @@ class User extends Component
     /**
      * @var boolean whether to automatically renew the identity cookie each time a page is requested.
      * This property is effective only when [[enableAutoLogin]] is true.
-     * When this is false, the identity cookie will expire after the specified duration since the user
+     * When this is false, the identity cookie will expire after the specified duration since the admin
      * is initially logged in. When this is true, the identity cookie will expire after the specified duration
-     * since the user visits the site the last time.
+     * since the admin visits the site the last time.
      * @see enableAutoLogin
      */
     public $autoRenewCookie = true;
@@ -170,13 +170,13 @@ class User extends Component
     private $_identity = false;
 
     /**
-     * Returns the identity object associated with the currently logged-in user.
-     * When [[enableSession]] is true, this method may attempt to read the user's authentication data
+     * Returns the identity object associated with the currently logged-in admin.
+     * When [[enableSession]] is true, this method may attempt to read the admin's authentication data
      * stored in session and reconstruct the corresponding identity object, if it has not done so before.
      * @param boolean $autoRenew whether to automatically renew authentication status if it has not been done so before.
      * This is only useful when [[enableSession]] is true.
-     * @return IdentityInterface|null the identity object associated with the currently logged-in user.
-     * `null` is returned if the user is not logged in (not authenticated).
+     * @return IdentityInterface|null the identity object associated with the currently logged-in admin.
+     * `null` is returned if the admin is not logged in (not authenticated).
      * @see login()
      * @see logout()
      */
@@ -195,13 +195,13 @@ class User extends Component
     }
 
     /**
-     * Sets the user identity object.
+     * Sets the admin identity object.
      *
      * Note that this method does not deal with session or cookie. You should usually use [[switchIdentity()]]
-     * to change the identity of the current user.
+     * to change the identity of the current admin.
      *
-     * @param IdentityInterface|null $identity the identity object associated with the currently logged user.
-     * If null, it means the current user will be a guest without any associated identity.
+     * @param IdentityInterface|null $identity the identity object associated with the currently logged admin.
+     * If null, it means the current admin will be a guest without any associated identity.
      * @throws InvalidValueException if `$identity` object does not implement [[IdentityInterface]].
      */
     public function setIdentity($identity)
@@ -217,9 +217,9 @@ class User extends Component
     }
 
     /**
-     * Logs in a user.
+     * Logs in a admin.
      *
-     * After logging in a user, you may obtain the user's identity information from the [[identity]] property.
+     * After logging in a admin, you may obtain the admin's identity information from the [[identity]] property.
      * If [[enableSession]] is true, you may even get the identity information in the next requests without
      * calling this method again.
      *
@@ -229,18 +229,18 @@ class User extends Component
      *   via [[identity]] as long as the session remains active.
      * - `$duration > 0`: the identity information will be stored in session. If [[enableAutoLogin]] is true,
      *   it will also be stored in a cookie which will expire in `$duration` seconds. As long as
-     *   the cookie remains valid or the session is active, you may obtain the user identity information
+     *   the cookie remains valid or the session is active, you may obtain the admin identity information
      *   via [[identity]].
      *
      * Note that if [[enableSession]] is false, the `$duration` parameter will be ignored as it is meaningless
      * in this case.
      *
-     * @param IdentityInterface $identity the user identity (which should already be authenticated)
-     * @param integer $duration number of seconds that the user can remain in logged-in status.
-     * Defaults to 0, meaning login till the user closes the browser or the session is manually destroyed.
+     * @param IdentityInterface $identity the admin identity (which should already be authenticated)
+     * @param integer $duration number of seconds that the admin can remain in logged-in status.
+     * Defaults to 0, meaning login till the admin closes the browser or the session is manually destroyed.
      * If greater than 0 and [[enableAutoLogin]] is true, cookie-based login will be supported.
      * Note that if [[enableSession]] is false, this parameter will be ignored.
-     * @return boolean whether the user is logged in
+     * @return boolean whether the admin is logged in
      */
     public function login(IdentityInterface $identity, $duration = 0)
     {
@@ -261,9 +261,9 @@ class User extends Component
     }
 
     /**
-     * Logs in a user by the given access token.
-     * This method will first authenticate the user by calling [[IdentityInterface::findIdentityByAccessToken()]]
-     * with the provided access token. If successful, it will call [[login()]] to log in the authenticated user.
+     * Logs in a admin by the given access token.
+     * This method will first authenticate the admin by calling [[IdentityInterface::findIdentityByAccessToken()]]
+     * with the provided access token. If successful, it will call [[login()]] to log in the authenticated admin.
      * If authentication fails or [[login()]] is unsuccessful, it will return null.
      * @param string $token the access token
      * @param mixed $type the type of the token. The value of this parameter depends on the implementation.
@@ -284,9 +284,9 @@ class User extends Component
     }
 
     /**
-     * Logs in a user by cookie.
+     * Logs in a admin by cookie.
      *
-     * This method attempts to log in a user using the ID and authKey information
+     * This method attempts to log in a admin using the ID and authKey information
      * provided by the [[identityCookie|identity cookie]].
      */
     protected function loginByCookie()
@@ -306,12 +306,12 @@ class User extends Component
     }
 
     /**
-     * Logs out the current user.
+     * Logs out the current admin.
      * This will remove authentication-related session data.
      * If `$destroySession` is true, all session data will be removed.
      * @param boolean $destroySession whether to destroy the whole session. Defaults to true.
      * This parameter is ignored if [[enableSession]] is false.
-     * @return boolean whether the user is logged out
+     * @return boolean whether the admin is logged out
      */
     public function logout($destroySession = true)
     {
@@ -331,8 +331,8 @@ class User extends Component
     }
 
     /**
-     * Returns a value indicating whether the user is a guest (not authenticated).
-     * @return boolean whether the current user is a guest.
+     * Returns a value indicating whether the admin is a guest (not authenticated).
+     * @return boolean whether the current admin is a guest.
      * @see getIdentity()
      */
     public function getIsGuest()
@@ -341,8 +341,8 @@ class User extends Component
     }
 
     /**
-     * Returns a value that uniquely represents the user.
-     * @return string|integer the unique identifier for the user. If null, it means the user is a guest.
+     * Returns a value that uniquely represents the admin.
+     * @return string|integer the unique identifier for the admin. If null, it means the admin is a guest.
      * @see getIdentity()
      */
     public function getId()
@@ -361,7 +361,7 @@ class User extends Component
      * @param string|array $defaultUrl the default return URL in case it was not set previously.
      * If this is null and the return URL was not set previously, [[Application::homeUrl]] will be redirected to.
      * Please refer to [[setReturnUrl()]] on accepted format of the URL.
-     * @return string the URL that the user should be redirected to after login.
+     * @return string the URL that the admin should be redirected to after login.
      * @see loginRequired()
      */
     public function getReturnUrl($defaultUrl = null)
@@ -380,7 +380,7 @@ class User extends Component
 
     /**
      * Remembers the URL in the session so that it can be retrieved back later by [[getReturnUrl()]].
-     * @param string|array $url the URL that the user should be redirected to after login.
+     * @param string|array $url the URL that the admin should be redirected to after login.
      * If an array is given, [[UrlManager::createUrl()]] will be called to create the corresponding URL.
      * The first element of the array should be the route, and the rest of
      * the name-value pairs are GET parameters used to construct the URL. For example,
@@ -395,12 +395,12 @@ class User extends Component
     }
 
     /**
-     * Redirects the user browser to the login page.
+     * Redirects the admin browser to the login page.
      *
      * Before the redirection, the current URL (if it's not an AJAX url) will be kept as [[returnUrl]] so that
-     * the user browser may be redirected back to the current page after successful login.
+     * the admin browser may be redirected back to the current page after successful login.
      *
-     * Make sure you set [[loginUrl]] so that the user browser can be redirected to the specified login URL after
+     * Make sure you set [[loginUrl]] so that the admin browser can be redirected to the specified login URL after
      * calling this method.
      *
      * Note that when [[loginUrl]] is set, calling this method will NOT terminate the application execution.
@@ -409,7 +409,7 @@ class User extends Component
      * is an AJAX request, the current URL (for AJAX request) will NOT be set as the return URL.
      * @param boolean $checkAcceptHeader whether to check if the request accepts HTML responses. Defaults to `true`. When this is true and
      * the request does not accept HTML responses the current URL will not be SET as the return URL. Also instead of
-     * redirecting the user an ForbiddenHttpException is thrown. This parameter is available since version 2.0.8.
+     * redirecting the admin an ForbiddenHttpException is thrown. This parameter is available since version 2.0.8.
      * @return Response the redirection response if [[loginUrl]] is set
      * @throws ForbiddenHttpException the "Access Denied" HTTP exception if [[loginUrl]] is not set or a redirect is
      * not applicable.
@@ -436,15 +436,15 @@ class User extends Component
     }
 
     /**
-     * This method is called before logging in a user.
+     * This method is called before logging in a admin.
      * The default implementation will trigger the [[EVENT_BEFORE_LOGIN]] event.
      * If you override this method, make sure you call the parent implementation
      * so that the event is triggered.
-     * @param IdentityInterface $identity the user identity information
+     * @param IdentityInterface $identity the admin identity information
      * @param boolean $cookieBased whether the login is cookie-based
-     * @param integer $duration number of seconds that the user can remain in logged-in status.
-     * If 0, it means login till the user closes the browser or the session is manually destroyed.
-     * @return boolean whether the user should continue to be logged in
+     * @param integer $duration number of seconds that the admin can remain in logged-in status.
+     * If 0, it means login till the admin closes the browser or the session is manually destroyed.
+     * @return boolean whether the admin should continue to be logged in
      */
     protected function beforeLogin($identity, $cookieBased, $duration)
     {
@@ -459,14 +459,14 @@ class User extends Component
     }
 
     /**
-     * This method is called after the user is successfully logged in.
+     * This method is called after the admin is successfully logged in.
      * The default implementation will trigger the [[EVENT_AFTER_LOGIN]] event.
      * If you override this method, make sure you call the parent implementation
      * so that the event is triggered.
-     * @param IdentityInterface $identity the user identity information
+     * @param IdentityInterface $identity the admin identity information
      * @param boolean $cookieBased whether the login is cookie-based
-     * @param integer $duration number of seconds that the user can remain in logged-in status.
-     * If 0, it means login till the user closes the browser or the session is manually destroyed.
+     * @param integer $duration number of seconds that the admin can remain in logged-in status.
+     * If 0, it means login till the admin closes the browser or the session is manually destroyed.
      */
     protected function afterLogin($identity, $cookieBased, $duration)
     {
@@ -478,12 +478,12 @@ class User extends Component
     }
 
     /**
-     * This method is invoked when calling [[logout()]] to log out a user.
+     * This method is invoked when calling [[logout()]] to log out a admin.
      * The default implementation will trigger the [[EVENT_BEFORE_LOGOUT]] event.
      * If you override this method, make sure you call the parent implementation
      * so that the event is triggered.
-     * @param IdentityInterface $identity the user identity information
-     * @return boolean whether the user should continue to be logged out
+     * @param IdentityInterface $identity the admin identity information
+     * @return boolean whether the admin should continue to be logged out
      */
     protected function beforeLogout($identity)
     {
@@ -496,11 +496,11 @@ class User extends Component
     }
 
     /**
-     * This method is invoked right after a user is logged out via [[logout()]].
+     * This method is invoked right after a admin is logged out via [[logout()]].
      * The default implementation will trigger the [[EVENT_AFTER_LOGOUT]] event.
      * If you override this method, make sure you call the parent implementation
      * so that the event is triggered.
-     * @param IdentityInterface $identity the user identity information
+     * @param IdentityInterface $identity the admin identity information
      */
     protected function afterLogout($identity)
     {
@@ -535,7 +535,7 @@ class User extends Component
      * It saves [[id]], [[IdentityInterface::getAuthKey()|auth key]], and the duration of cookie-based login
      * information in the cookie.
      * @param IdentityInterface $identity
-     * @param integer $duration number of seconds that the user can remain in logged-in status.
+     * @param integer $duration number of seconds that the admin can remain in logged-in status.
      * @see loginByCookie()
      */
     protected function sendIdentityCookie($identity, $duration)
@@ -553,7 +553,7 @@ class User extends Component
     /**
      * Determines if an identity cookie has a valid format and contains a valid auth key.
      * This method is used when [[enableAutoLogin]] is true.
-     * This method attempts to authenticate a user using the information in the identity cookie.
+     * This method attempts to authenticate a admin using the information in the identity cookie.
      * @return array|null Returns an array of 'identity' and 'duration' if valid, otherwise null.
      * @see loginByCookie()
      * @since 2.0.9
@@ -574,7 +574,7 @@ class User extends Component
                 if (!$identity instanceof IdentityInterface) {
                     throw new InvalidValueException("$class::findIdentity() must return an object implementing IdentityInterface.");
                 } elseif (!$identity->validateAuthKey($authKey)) {
-                    Yii::warning("Invalid auth key attempted for user '$id': $authKey", __METHOD__);
+                    Yii::warning("Invalid auth key attempted for admin '$id': $authKey", __METHOD__);
                 } else {
                     return ['identity' => $identity, 'duration' => $duration];
                 }
@@ -595,17 +595,17 @@ class User extends Component
     }
 
     /**
-     * Switches to a new identity for the current user.
+     * Switches to a new identity for the current admin.
      *
-     * When [[enableSession]] is true, this method may use session and/or cookie to store the user identity information,
+     * When [[enableSession]] is true, this method may use session and/or cookie to store the admin identity information,
      * according to the value of `$duration`. Please refer to [[login()]] for more details.
      *
      * This method is mainly called by [[login()]], [[logout()]] and [[loginByCookie()]]
-     * when the current user needs to be associated with the corresponding identity information.
+     * when the current admin needs to be associated with the corresponding identity information.
      *
-     * @param IdentityInterface|null $identity the identity information to be associated with the current user.
-     * If null, it means switching the current user to be a guest.
-     * @param integer $duration number of seconds that the user can remain in logged-in status.
+     * @param IdentityInterface|null $identity the identity information to be associated with the current admin.
+     * If null, it means switching the current admin to be a guest.
+     * @param integer $duration number of seconds that the admin can remain in logged-in status.
      * This parameter is used only when `$identity` is not null.
      */
     public function switchIdentity($identity, $duration = 0)
@@ -645,11 +645,11 @@ class User extends Component
     /**
      * Updates the authentication status using the information from session and cookie.
      *
-     * This method will try to determine the user identity using the [[idParam]] session variable.
+     * This method will try to determine the admin identity using the [[idParam]] session variable.
      *
      * If [[authTimeout]] is set, this method will refresh the timer.
      *
-     * If the user identity cannot be determined by session, this method will try to [[loginByCookie()|login by cookie]]
+     * If the admin identity cannot be determined by session, this method will try to [[loginByCookie()|login by cookie]]
      * if [[enableAutoLogin]] is true.
      */
     protected function renewAuthStatus()
@@ -687,21 +687,21 @@ class User extends Component
     }
 
     /**
-     * Checks if the user can perform the operation as specified by the given permission.
+     * Checks if the admin can perform the operation as specified by the given permission.
      *
      * Note that you must configure "authManager" application component in order to use this method.
      * Otherwise it will always return false.
      *
      * @param string $permissionName the name of the permission (e.g. "edit post") that needs access check.
      * @param array $params name-value pairs that would be passed to the rules associated
-     * with the roles and permissions assigned to the user.
+     * with the roles and permissions assigned to the admin.
      * @param boolean $allowCaching whether to allow caching the result of access check.
      * When this parameter is true (default), if the access check of an operation was performed
      * before, its result will be directly returned when calling this method to check the same
      * operation. If this parameter is false, this method will always call
      * [[\yii\rbac\CheckAcessInterface::checkAccess()]] to obtain the up-to-date access result. Note that this
      * caching is effective only within the same request and only works when `$params = []`.
-     * @return boolean whether the user can perform the operation as specified by the given permission.
+     * @return boolean whether the admin can perform the operation as specified by the given permission.
      */
     public function can($permissionName, $params = [], $allowCaching = true)
     {
@@ -744,7 +744,7 @@ class User extends Component
     }
 
     /**
-     * Returns auth manager associated with the user component.
+     * Returns auth manager associated with the admin component.
      *
      * By default this is the `authManager` application component.
      * You may override this method to return a different auth manager instance if needed.

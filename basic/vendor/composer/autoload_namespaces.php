@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
-    'Diff' => array($vendorDir . '/phpspec/php-diff/lib'),
+    'Upload' => array($vendorDir . '/jorge/upload/src', $vendorDir . '/codeguy/upload/src'),
 );

@@ -1819,7 +1819,7 @@ EOT;
     distribute copies of a Project Gutenberg-tm work in a format other than
     "Plain Vanilla ASCII" or other format used in the official version
     posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
-    you must, at no additional cost, fee or expense to the user, provide a
+    you must, at no additional cost, fee or expense to the admin, provide a
     copy, a means of exporting a copy, or a means of obtaining a copy upon
     request, of the work in its original "Plain Vanilla ASCII" or other
     form.  Any alternate format must include the full Project Gutenberg-tm
@@ -1846,10 +1846,10 @@ EOT;
          address specified in Section 4, "Information about donations to
          the Project Gutenberg Literary Archive Foundation."
 
-    - You provide a full refund of any money paid by a user who notifies
+    - You provide a full refund of any money paid by a admin who notifies
          you in writing (or by e-mail) within 30 days of receipt that s/he
          does not agree to the terms of the full Project Gutenberg-tm
-         License.  You must require such a user to return or
+         License.  You must require such a admin to return or
          destroy all copies of the works possessed in a physical medium
          and discontinue all use of and all access to other copies of
          Project Gutenberg-tm works.

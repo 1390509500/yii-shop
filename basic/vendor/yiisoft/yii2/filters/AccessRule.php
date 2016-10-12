@@ -39,8 +39,8 @@ class AccessRule extends Component
      * @var array list of roles that this rule applies to. Two special roles are recognized, and
      * they are checked via [[User::isGuest]]:
      *
-     * - `?`: matches a guest user (not authenticated yet)
-     * - `@`: matches an authenticated user
+     * - `?`: matches a guest admin (not authenticated yet)
+     * - `@`: matches an authenticated admin
      *
      * If you are using RBAC (Role-Based Access Control), you may also specify role or permission names.
      * In this case, [[User::can()]] will be called to check access.
@@ -49,7 +49,7 @@ class AccessRule extends Component
      */
     public $roles;
     /**
-     * @var array list of user IP addresses that this rule applies to. An IP address
+     * @var array list of admin IP addresses that this rule applies to. An IP address
      * can contain the wildcard `*` at the end so that it matches IP addresses with the same prefix.
      * For example, '192.168.*' matches all IP addresses in the segment '192.168.'.
      * If not set or empty, it means this rule applies to all IP addresses.
@@ -91,11 +91,11 @@ class AccessRule extends Component
 
 
     /**
-     * Checks whether the Web user is allowed to perform the specified action.
+     * Checks whether the Web admin is allowed to perform the specified action.
      * @param Action $action the action to be performed
-     * @param User $user the user object
+     * @param User $user the admin object
      * @param Request $request
-     * @return boolean|null true if the user is allowed, false if the user is denied, null if the rule does not apply to the user
+     * @return boolean|null true if the admin is allowed, false if the admin is denied, null if the rule does not apply to the admin
      */
     public function allows($action, $user, $request)
     {
@@ -131,7 +131,7 @@ class AccessRule extends Component
     }
 
     /**
-     * @param User $user the user object
+     * @param User $user the admin object
      * @return boolean whether the rule applies to the role
      */
     protected function matchRole($user)

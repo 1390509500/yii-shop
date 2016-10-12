@@ -22,11 +22,11 @@ use yii\web\UnauthorizedHttpException;
 interface AuthInterface
 {
     /**
-     * Authenticates the current user.
+     * Authenticates the current admin.
      * @param User $user
      * @param Request $request
      * @param Response $response
-     * @return IdentityInterface the authenticated user identity. If authentication information is not provided, null will be returned.
+     * @return IdentityInterface the authenticated admin identity. If authentication information is not provided, null will be returned.
      * @throws UnauthorizedHttpException if authentication information is provided but is invalid.
      */
     public function authenticate($user, $request, $response);

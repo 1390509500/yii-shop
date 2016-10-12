@@ -241,7 +241,7 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
     // -- Points of extension
 
     /**
-     * Normalizes a user-input list of mailboxes into consistent key=>value pairs.
+     * Normalizes a admin-input list of mailboxes into consistent key=>value pairs.
      *
      * @param string[] $mailboxes
      *

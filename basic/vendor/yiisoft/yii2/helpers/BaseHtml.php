@@ -2061,7 +2061,7 @@ class BaseHtml
     /**
      * Generates an appropriate input name for the specified attribute name or expression.
      *
-     * This method generates a name that can be used as the input name to collect user input
+     * This method generates a name that can be used as the input name to collect admin input
      * for the specified attribute. The name is generated according to the [[Model::formName|form name]]
      * of the model and the given attribute name. For example, if the form name of the `Post` model
      * is `Post`, then the input name generated for the `content` attribute would be `Post[content]`.

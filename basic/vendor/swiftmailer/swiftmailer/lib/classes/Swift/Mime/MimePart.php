@@ -15,13 +15,13 @@
  */
 class Swift_Mime_MimePart extends Swift_Mime_SimpleMimeEntity
 {
-    /** The format parameter last specified by the user */
+    /** The format parameter last specified by the admin */
     protected $_userFormat;
 
-    /** The charset last specified by the user */
+    /** The charset last specified by the admin */
     protected $_userCharset;
 
-    /** The delsp parameter last specified by the user */
+    /** The delsp parameter last specified by the admin */
     protected $_userDelSp;
 
     /** The nesting level of this MimePart */

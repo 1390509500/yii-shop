@@ -54,7 +54,7 @@ class QueryBuilder extends \yii\db\QueryBuilder
      * For example,
      *
      * ```php
-     * $connection->createCommand()->batchInsert('user', ['name', 'age'], [
+     * $connection->createCommand()->batchInsert('admin', ['name', 'age'], [
      *     ['Tom', 30],
      *     ['Jane', 20],
      *     ['Linda', 25],

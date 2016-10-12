@@ -16,7 +16,7 @@ use yii\helpers\StringHelper;
 /**
  * This generator will generate a controller and one or a few action view files.
  *
- * @property array $actionIDs An array of action IDs entered by the user. This property is read-only.
+ * @property array $actionIDs An array of action IDs entered by the admin. This property is read-only.
  * @property string $controllerFile The controller class file path. This property is read-only.
  * @property string $controllerID The controller ID. This property is read-only.
  * @property string $controllerNamespace The namespace of the controller class. This property is read-only.
@@ -172,7 +172,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Normalizes [[actions]] into an array of action IDs.
-     * @return array an array of action IDs entered by the user
+     * @return array an array of action IDs entered by the admin
      */
     public function getActionIDs()
     {

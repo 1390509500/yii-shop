@@ -56,15 +56,15 @@ use yii\helpers\StringHelper;
  * Below is an example showing some typical usage of ActiveRecord:
  *
  * ```php
- * $user = new User();
- * $user->name = 'Qiang';
- * $user->save();  // a new row is inserted into user table
+ * $admin = new User();
+ * $admin->name = 'Qiang';
+ * $admin->save();  // a new row is inserted into admin table
  *
- * // the following will retrieve the user 'CeBe' from the database
- * $user = User::find()->where(['name' => 'CeBe'])->one();
+ * // the following will retrieve the admin 'CeBe' from the database
+ * $admin = User::find()->where(['name' => 'CeBe'])->one();
  *
  * // this will get related records from orders table when relation is defined
- * $orders = $user->orders;
+ * $orders = $admin->orders;
  * ```
  *
  * For more details and usage information on ActiveRecord, see the [guide article on ActiveRecord](guide:db-active-record).

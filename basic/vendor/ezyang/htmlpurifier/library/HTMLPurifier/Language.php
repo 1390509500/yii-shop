@@ -34,7 +34,7 @@ class HTMLPurifier_Language
     /**
      * True if no message file was found for this language, so English
      * is being used instead. Check this if you'd like to notify the
-     * user that they've used a non-supported language.
+     * admin that they've used a non-supported language.
      * @type bool
      */
     public $error = false;

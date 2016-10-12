@@ -17,14 +17,14 @@ use yii\web\View;
 /**
  * This is the base class for all generator classes.
  *
- * A generator instance is responsible for taking user inputs, validating them,
+ * A generator instance is responsible for taking admin inputs, validating them,
  * and using them to generate the corresponding code based on a set of code template files.
  *
  * A generator class typically needs to implement the following methods:
  *
  * - [[getName()]]: returns the name of the generator
  * - [[getDescription()]]: returns the detailed description of the generator
- * - [[generate()]]: generates the code based on the current user input and the specified code template files.
+ * - [[generate()]]: generates the code based on the current admin input and the specified code template files.
  *   This is the place where main code generation code resides.
  *
  * @property string $description The detailed description of the generator. This property is read-only.
@@ -44,7 +44,7 @@ abstract class Generator extends Model
      */
     public $templates = [];
     /**
-     * @var string the name of the code template that the user has selected.
+     * @var string the name of the code template that the admin has selected.
      * The value of this property is internally managed by this class.
      */
     public $template = 'default';
@@ -64,7 +64,7 @@ abstract class Generator extends Model
      */
     abstract public function getName();
     /**
-     * Generates the code based on the current user input and the specified code template files.
+     * Generates the code based on the current admin input and the specified code template files.
      * This is the main method that child classes should implement.
      * Please refer to [[\yii\gii\generators\controller\Generator::generate()]] as an example
      * on how to implement this method.
@@ -319,7 +319,7 @@ abstract class Generator extends Model
 
     /**
      * Validates the template selection.
-     * This method validates whether the user selects an existing template
+     * This method validates whether the admin selects an existing template
      * and the template contains all required template files as specified in [[requiredTemplates()]].
      */
     public function validateTemplate()

@@ -17,11 +17,11 @@ use yii\base\Object;
  * you can iterate it to obtain a batch of data in each iteration. For example,
  *
  * ```php
- * $query = (new Query)->from('user');
+ * $query = (new Query)->from('admin');
  * foreach ($query->batch() as $i => $users) {
  *     // $users represents the rows in the $i-th batch
  * }
- * foreach ($query->each() as $user) {
+ * foreach ($query->each() as $admin) {
  * }
  * ```
  *

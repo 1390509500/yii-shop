@@ -18,9 +18,9 @@ class Swift_Bug38Test extends \PHPUnit_Framework_TestCase
     {
         $message = new Swift_Message();
         $message->setSubject('test subject');
-        $message->setTo('user@domain.tld');
+        $message->setTo('admin@domain.tld');
         $message->setCc('other@domain.tld');
-        $message->setFrom('user@domain.tld');
+        $message->setFrom('admin@domain.tld');
 
         $image = new Swift_Image('<data>', 'image.gif', 'image/gif');
 
@@ -41,8 +41,8 @@ class Swift_Bug38Test extends \PHPUnit_Framework_TestCase
             'Message-ID: <'.$id.'>'."\r\n".
             'Date: '.$date."\r\n".
             'Subject: test subject'."\r\n".
-            'From: user@domain.tld'."\r\n".
-            'To: user@domain.tld'."\r\n".
+            'From: admin@domain.tld'."\r\n".
+            'To: admin@domain.tld'."\r\n".
             'Cc: other@domain.tld'."\r\n".
             'MIME-Version: 1.0'."\r\n".
             'Content-Type: multipart/related;'."\r\n".
@@ -72,9 +72,9 @@ class Swift_Bug38Test extends \PHPUnit_Framework_TestCase
     {
         $message = new Swift_Message();
         $message->setSubject('test subject');
-        $message->setTo('user@domain.tld');
+        $message->setTo('admin@domain.tld');
         $message->setCc('other@domain.tld');
-        $message->setFrom('user@domain.tld');
+        $message->setFrom('admin@domain.tld');
 
         $image = new Swift_Image('<data>', 'image.gif', 'image/gif');
 
@@ -90,8 +90,8 @@ class Swift_Bug38Test extends \PHPUnit_Framework_TestCase
         'Message-ID: <'.$id.'>'."\r\n".
         'Date: '.$date."\r\n".
         'Subject: test subject'."\r\n".
-        'From: user@domain.tld'."\r\n".
-        'To: user@domain.tld'."\r\n".
+        'From: admin@domain.tld'."\r\n".
+        'To: admin@domain.tld'."\r\n".
         'Cc: other@domain.tld'."\r\n".
         'MIME-Version: 1.0'."\r\n".
         'Content-Type: multipart/related;'."\r\n".
@@ -129,9 +129,9 @@ class Swift_Bug38Test extends \PHPUnit_Framework_TestCase
     {
         $message = new Swift_Message();
         $message->setSubject('test subject');
-        $message->setTo('user@domain.tld');
+        $message->setTo('admin@domain.tld');
         $message->setCc('other@domain.tld');
-        $message->setFrom('user@domain.tld');
+        $message->setFrom('admin@domain.tld');
 
         $attachment = Swift_Attachment::fromPath($this->_attFile);
 
@@ -150,8 +150,8 @@ class Swift_Bug38Test extends \PHPUnit_Framework_TestCase
             'Message-ID: <'.$id.'>'."\r\n".
             'Date: '.$date."\r\n".
             'Subject: test subject'."\r\n".
-            'From: user@domain.tld'."\r\n".
-            'To: user@domain.tld'."\r\n".
+            'From: admin@domain.tld'."\r\n".
+            'To: admin@domain.tld'."\r\n".
             'Cc: other@domain.tld'."\r\n".
             'MIME-Version: 1.0'."\r\n".
             'Content-Type: multipart/mixed;'."\r\n".

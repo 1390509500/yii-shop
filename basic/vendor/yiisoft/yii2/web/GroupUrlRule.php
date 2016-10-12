@@ -20,8 +20,8 @@ use yii\base\InvalidConfigException;
  * new GroupUrlRule([
  *     'prefix' => 'admin',
  *     'rules' => [
- *         'login' => 'user/login',
- *         'logout' => 'user/logout',
+ *         'login' => 'admin/login',
+ *         'logout' => 'admin/logout',
  *         'dashboard' => 'default/dashboard',
  *     ],
  * ]);
@@ -29,8 +29,8 @@ use yii\base\InvalidConfigException;
  * // the above rule is equivalent to the following three rules:
  *
  * [
- *     'admin/login' => 'admin/user/login',
- *     'admin/logout' => 'admin/user/logout',
+ *     'admin/login' => 'admin/admin/login',
+ *     'admin/logout' => 'admin/admin/logout',
  *     'admin/dashboard' => 'admin/default/dashboard',
  * ]
  * ```

@@ -13,8 +13,8 @@ use yii\base\Component;
  * Fixture represents a fixed state of a test environment.
  *
  * Each fixture instance represents a particular aspect of a test environment. For example,
- * you may use `UserFixture` to initialize the user database table with a set of known data. You may
- * load the fixture when running every test method so that the user table always contains the fixed data
+ * you may use `UserFixture` to initialize the admin database table with a set of known data. You may
+ * load the fixture when running every test method so that the admin table always contains the fixed data
  * and thus allows your test predictable and repeatable.
  *
  * A fixture may depend on other fixtures, specified via the [[depends]] property. When a fixture is being loaded,

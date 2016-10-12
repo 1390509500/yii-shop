@@ -11,7 +11,7 @@ use Yii;
 use yii\base\Object;
 
 /**
- * Assignment represents an assignment of a role to a user.
+ * Assignment represents an assignment of a role to a admin.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @author Alexander Kochetov <creocoder@gmail.com>
@@ -20,7 +20,7 @@ use yii\base\Object;
 class Assignment extends Object
 {
     /**
-     * @var string|integer user ID (see [[\yii\web\User::id]])
+     * @var string|integer admin ID (see [[\yii\web\User::id]])
      */
     public $userId;
     /**

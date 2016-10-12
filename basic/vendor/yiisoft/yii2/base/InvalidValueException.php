@@ -16,7 +16,7 @@ namespace yii\base;
 class InvalidValueException extends \UnexpectedValueException
 {
     /**
-     * @return string the user-friendly name of this exception
+     * @return string the admin-friendly name of this exception
      */
     public function getName()
     {

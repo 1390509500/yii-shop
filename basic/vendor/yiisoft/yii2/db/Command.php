@@ -24,7 +24,7 @@ use yii\base\NotSupportedException;
  * For example,
  *
  * ```php
- * $users = $connection->createCommand('SELECT * FROM user')->queryAll();
+ * $users = $connection->createCommand('SELECT * FROM admin')->queryAll();
  * ```
  *
  * Command supports SQL statement preparation and parameter binding.
@@ -37,7 +37,7 @@ use yii\base\NotSupportedException;
  * [[update()]], etc. For example, the following code will create and execute an INSERT SQL statement:
  *
  * ```php
- * $connection->createCommand()->insert('user', [
+ * $connection->createCommand()->insert('admin', [
  *     'name' => 'Sam',
  *     'age' => 30,
  * ])->execute();
@@ -410,7 +410,7 @@ class Command extends Component
      * For example,
      *
      * ```php
-     * $connection->createCommand()->insert('user', [
+     * $connection->createCommand()->insert('admin', [
      *     'name' => 'Sam',
      *     'age' => 30,
      * ])->execute();
@@ -437,7 +437,7 @@ class Command extends Component
      * For example,
      *
      * ```php
-     * $connection->createCommand()->batchInsert('user', ['name', 'age'], [
+     * $connection->createCommand()->batchInsert('admin', ['name', 'age'], [
      *     ['Tom', 30],
      *     ['Jane', 20],
      *     ['Linda', 25],
@@ -467,7 +467,7 @@ class Command extends Component
      * For example,
      *
      * ```php
-     * $connection->createCommand()->update('user', ['status' => 1], 'age > 30')->execute();
+     * $connection->createCommand()->update('admin', ['status' => 1], 'age > 30')->execute();
      * ```
      *
      * The method will properly escape the column names and bind the values to be updated.
@@ -493,7 +493,7 @@ class Command extends Component
      * For example,
      *
      * ```php
-     * $connection->createCommand()->delete('user', 'status = 0')->execute();
+     * $connection->createCommand()->delete('admin', 'status = 0')->execute();
      * ```
      *
      * The method will properly escape the table and column names.

@@ -161,7 +161,7 @@ class Security extends Component
      * @param string $data data to be encrypted
      * @param boolean $passwordBased set true to use password-based key derivation
      * @param string $secret the encryption password or key
-     * @param string $info context/application specific information, e.g. a user ID
+     * @param string $info context/application specific information, e.g. a admin ID
      * See [RFC 5869 Section 3.2](https://tools.ietf.org/html/rfc5869#section-3.2) for more details.
      *
      * @return string the encrypted data
@@ -262,7 +262,7 @@ class Security extends Component
      * @param string $inputKey the source key
      * @param string $salt the random salt
      * @param string $info optional info to bind the derived key material to application-
-     * and context-specific information, e.g. a user ID or API version, see
+     * and context-specific information, e.g. a admin ID or API version, see
      * [RFC 5869](https://tools.ietf.org/html/rfc5869)
      * @param integer $length length of the output key in bytes. If 0, the output key is
      * the length of the hash algorithm output.
@@ -502,7 +502,7 @@ class Security extends Component
                 if (is_resource($this->_randomFile)) {
                     // Reduce PHP stream buffer from default 8192 bytes to optimize data
                     // transfer from the random device for smaller values of $length.
-                    // This also helps to keep future randoms out of user memory space.
+                    // This also helps to keep future randoms out of admin memory space.
                     $bufferSize = 8;
 
                     if (function_exists('stream_set_read_buffer')) {
@@ -570,7 +570,7 @@ class Security extends Component
      * to [[validatePassword()]]. For example,
      *
      * ```php
-     * // generates the hash (usually done during user registration or when the password is changed)
+     * // generates the hash (usually done during admin registration or when the password is changed)
      * $hash = Yii::$app->getSecurity()->generatePasswordHash($password);
      * // ...save $hash in database...
      *
@@ -683,7 +683,7 @@ class Security extends Component
      * Performs string comparison using timing attack resistant approach.
      * @see http://codereview.stackexchange.com/questions/13512
      * @param string $expected string to compare.
-     * @param string $actual user-supplied string.
+     * @param string $actual admin-supplied string.
      * @return boolean whether strings are equal.
      */
     public function compareString($expected, $actual)

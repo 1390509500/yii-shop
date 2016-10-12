@@ -40,7 +40,7 @@ class RequiredValidator extends Validator
      */
     public $strict = false;
     /**
-     * @var string the user-defined error message. It may contain the following placeholders which
+     * @var string the admin-defined error message. It may contain the following placeholders which
      * will be replaced accordingly by the validator:
      *
      * - `{attribute}`: the label of the attribute being validated

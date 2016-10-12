@@ -18,7 +18,7 @@ use yii\base\InvalidRouteException;
  * @property Request $request The request component. This property is read-only.
  * @property Response $response The response component. This property is read-only.
  * @property Session $session The session component. This property is read-only.
- * @property User $user The user component. This property is read-only.
+ * @property User $admin The admin component. This property is read-only.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -31,7 +31,7 @@ class Application extends \yii\base\Application
     public $defaultRoute = 'site';
     /**
      * @var array the configuration specifying a controller action which should handle
-     * all user requests. This is mainly used when the application is in maintenance mode
+     * all admin requests. This is mainly used when the application is in maintenance mode
      * and needs to handle all incoming requests via a single action.
      * The configuration is an array whose first element specifies the route of the action.
      * The rest of the array elements (key-value pairs) specify the parameters to be bound
@@ -163,12 +163,12 @@ class Application extends \yii\base\Application
     }
 
     /**
-     * Returns the user component.
-     * @return User the user component.
+     * Returns the admin component.
+     * @return User the admin component.
      */
     public function getUser()
     {
-        return $this->get('user');
+        return $this->get('admin');
     }
 
     /**
@@ -180,7 +180,7 @@ class Application extends \yii\base\Application
             'request' => ['class' => 'yii\web\Request'],
             'response' => ['class' => 'yii\web\Response'],
             'session' => ['class' => 'yii\web\Session'],
-            'user' => ['class' => 'yii\web\User'],
+            'admin' => ['class' => 'yii\web\User'],
             'errorHandler' => ['class' => 'yii\web\ErrorHandler'],
         ]);
     }

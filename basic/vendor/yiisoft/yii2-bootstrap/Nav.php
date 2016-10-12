@@ -36,7 +36,7 @@ use yii\helpers\ArrayHelper;
  *         [
  *             'label' => 'Login',
  *             'url' => ['site/login'],
- *             'visible' => Yii::$app->user->isGuest
+ *             'visible' => Yii::$app->admin->isGuest
  *         ],
  *     ],
  *     'options' => ['class' =>'nav-pills'], // set this to nav-tab to get tab-styled navigation

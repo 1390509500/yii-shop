@@ -82,7 +82,7 @@ class EmailValidator extends Validator
             }
 
             if (strlen($matches['local']) > 64) {
-                // The maximum total length of a user name or other local-part is 64 octets. RFC 5322 section 4.5.3.1.1
+                // The maximum total length of a admin name or other local-part is 64 octets. RFC 5322 section 4.5.3.1.1
                 // http://tools.ietf.org/html/rfc5321#section-4.5.3.1.1
                 $valid = false;
             } elseif (strlen($matches['local'] . '@' . $matches['domain']) > 254) {

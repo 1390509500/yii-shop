@@ -18,7 +18,7 @@ use Yii;
  * Derived classes must implement a method named `run()`. This method
  * will be invoked by the controller when the action is requested.
  * The `run()` method can have parameters which will be filled up
- * with user input values automatically according to their names.
+ * with admin input values automatically according to their names.
  * For example, if the `run()` method is declared as follows:
  *
  * ```php

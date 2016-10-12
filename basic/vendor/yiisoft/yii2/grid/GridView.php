@@ -195,7 +195,7 @@ class GridView extends BaseListView
      */
     public $emptyCell = '&nbsp;';
     /**
-     * @var \yii\base\Model the model that keeps the user-entered filter data. When this property is set,
+     * @var \yii\base\Model the model that keeps the admin-entered filter data. When this property is set,
      * the grid view will enable column-based filtering. Each data column by default will display a text field
      * at the top that users can fill in to filter the data.
      *
@@ -208,7 +208,7 @@ class GridView extends BaseListView
     /**
      * @var string|array the URL for returning the filtering result. [[Url::to()]] will be called to
      * normalize the URL. If not set, the current controller action will be used.
-     * When the user makes change to any filter input, the current filtering inputs will be appended
+     * When the admin makes change to any filter input, the current filtering inputs will be appended
      * as GET parameters to this URL.
      */
     public $filterUrl;

@@ -53,7 +53,7 @@ abstract class Diff_Renderer_Abstract
 	protected $defaultOptions = array();
 
 	/**
-	 * @var array Array containing the user applied and merged default options for the renderer.
+	 * @var array Array containing the admin applied and merged default options for the renderer.
 	 */
 	protected $options = array();
 

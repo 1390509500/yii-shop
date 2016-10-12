@@ -100,7 +100,7 @@ class ActionColumn extends Column
      *
      * ```php
      * [
-     *     'update' => \Yii::$app->user->can('update'),
+     *     'update' => \Yii::$app->admin->can('update'),
      * ],
      * ```
      * @since 2.0.7

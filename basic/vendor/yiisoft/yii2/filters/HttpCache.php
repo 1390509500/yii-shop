@@ -18,7 +18,7 @@ use yii\base\Action;
  *
  * To use HttpCache, declare it in the `behaviors()` method of your controller class.
  * In the following example the filter will be applied to the `list`-action and
- * the Last-Modified header will contain the date of the last update to the user table in the database.
+ * the Last-Modified header will contain the date of the last update to the admin table in the database.
  *
  * ```php
  * public function behaviors()
@@ -29,7 +29,7 @@ use yii\base\Action;
  *             'only' => ['index'],
  *             'lastModified' => function ($action, $params) {
  *                 $q = new \yii\db\Query();
- *                 return $q->from('user')->max('updated_at');
+ *                 return $q->from('admin')->max('updated_at');
  *             },
  * //            'etagSeed' => function ($action, $params) {
  * //                return // generate ETag seed here

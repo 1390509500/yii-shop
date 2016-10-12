@@ -209,7 +209,7 @@ EOD;
      * For example,
      *
      * ```php
-     * $sql = $queryBuilder->batchInsert('user', ['name', 'age'], [
+     * $sql = $queryBuilder->batchInsert('admin', ['name', 'age'], [
      *     ['Tom', 30],
      *     ['Jane', 20],
      *     ['Linda', 25],

@@ -14,8 +14,8 @@ namespace yii\web;
  * Using such a storage allows saving particular session data into separated field, which then can be used
  * to manipulate sessions in the way plain PHP does not allow.
  *
- * For example the ID of the authenticated user can be saved as separated column in the MySQL 'session' table,
- * which allows to query all active sessions for a particular user or terminate them at will.
+ * For example the ID of the authenticated admin can be saved as separated column in the MySQL 'session' table,
+ * which allows to query all active sessions for a particular admin or terminate them at will.
  *
  * Customizing of the session writing is performed via [[writeCallback]], reading via [[readCallback]].
  *
@@ -67,7 +67,7 @@ abstract class MultiFieldSession extends Session
      * ```php
      * function ($session) {
      *     return [
-     *         'user_id' => Yii::$app->user->id,
+     *         'user_id' => Yii::$app->admin->id,
      *         'ip' => $_SERVER['REMOTE_ADDR'],
      *         'is_trusted' => $session->get('is_trusted', false),
      *     ];

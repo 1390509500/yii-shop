@@ -34,7 +34,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     /**
      * @var array the list of hosts that are allowed to access this module.
      * Each array element is a hostname that will be resolved to an IP address that is compared
-     * with the IP address of the user. A use case is to use a dynamic DNS (DDNS) to allow access.
+     * with the IP address of the admin. A use case is to use a dynamic DNS (DDNS) to allow access.
      * The default value is `[]`.
      */
     public $allowedHosts = [];
@@ -219,7 +219,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     }
 
     /**
-     * Checks if current user is allowed to access the module
+     * Checks if current admin is allowed to access the module
      * @return boolean if access is granted
      */
     protected function checkAccess()

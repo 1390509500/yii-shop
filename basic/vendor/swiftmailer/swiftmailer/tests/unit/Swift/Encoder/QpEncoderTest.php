@@ -66,7 +66,7 @@ class Swift_Encoder_QpEncoderTest extends \SwiftMailerTestCase
                     value 9 or 32 appearing at the end of an encoded line
                     must be represented according to Rule #1.  This rule is
                     necessary because some MTAs (Message Transport Agents,
-                    programs which transport messages from one user to
+                    programs which transport messages from one admin to
                     another, or perform a portion of such transfers) are
                     known to pad lines of text with SPACEs, and others are
                     known to remove "white space" characters from the end
@@ -139,7 +139,7 @@ class Swift_Encoder_QpEncoderTest extends \SwiftMailerTestCase
                     text do not generally include the representation of
                     line breaks as CRLF sequences, no hard line breaks
                     (i.e. line breaks that are intended to be meaningful
-                    and to be displayed to the user) can occur in the
+                    and to be displayed to the admin) can occur in the
                     quoted-printable encoding of such types.  Sequences
                     like "=0D", "=0A", "=0A=0D" and "=0D=0A" will routinely
                     appear in non-text data represented in quoted-

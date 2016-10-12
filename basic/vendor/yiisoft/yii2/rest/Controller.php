@@ -21,7 +21,7 @@ use yii\filters\VerbFilter;
  *
  * 1. Resolving response format (see [[ContentNegotiator]]);
  * 2. Validating request method (see [[verbs()]]).
- * 3. Authenticating user (see [[\yii\filters\auth\AuthInterface]]);
+ * 3. Authenticating admin (see [[\yii\filters\auth\AuthInterface]]);
  * 4. Rate limiting (see [[RateLimiter]]);
  * 5. Formatting response data (see [[serializeData()]]).
  *

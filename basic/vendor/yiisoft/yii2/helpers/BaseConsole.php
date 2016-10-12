@@ -711,11 +711,11 @@ class BaseConsole
     }
 
     /**
-     * Asks the user for input. Ends when the user types a carriage return (PHP_EOL). Optionally, It also provides a
+     * Asks the admin for input. Ends when the admin types a carriage return (PHP_EOL). Optionally, It also provides a
      * prompt.
      *
      * @param string $prompt the prompt to display before waiting for input (optional)
-     * @return string the user's input
+     * @return string the admin's input
      */
     public static function input($prompt = null)
     {
@@ -749,19 +749,19 @@ class BaseConsole
     }
 
     /**
-     * Prompts the user for input and validates it
+     * Prompts the admin for input and validates it
      *
      * @param string $text prompt string
      * @param array $options the options to validate the input:
      *
      * - `required`: whether it is required or not
-     * - `default`: default value if no input is inserted by the user
-     * - `pattern`: regular expression pattern to validate user input
+     * - `default`: default value if no input is inserted by the admin
+     * - `pattern`: regular expression pattern to validate admin input
      * - `validator`: a callable function to validate input. The function must accept two parameters:
-     * - `input`: the user input to validate
+     * - `input`: the admin input to validate
      * - `error`: the error value passed by reference if validation failed.
      *
-     * @return string the user input
+     * @return string the admin input
      */
     public static function prompt($text, $options = [])
     {
@@ -803,11 +803,11 @@ class BaseConsole
     }
 
     /**
-     * Asks user to confirm by typing y or n.
+     * Asks admin to confirm by typing y or n.
      *
-     * @param string $message to print out before waiting for user input
+     * @param string $message to print out before waiting for admin input
      * @param boolean $default this value is returned if no selection is made.
-     * @return boolean whether user confirmed
+     * @return boolean whether admin confirmed
      */
     public static function confirm($message, $default = false)
     {
@@ -830,13 +830,13 @@ class BaseConsole
     }
 
     /**
-     * Gives the user an option to choose from. Giving '?' as an input will show
+     * Gives the admin an option to choose from. Giving '?' as an input will show
      * a list of options to choose from and their explanations.
      *
      * @param string $prompt the prompt message
      * @param array $options Key-value array of options to choose from
      *
-     * @return string An option character the user chose
+     * @return string An option character the admin chose
      */
     public static function select($prompt, $options = [])
     {

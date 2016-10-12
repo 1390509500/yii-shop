@@ -2,7 +2,7 @@
 
 /**
  * Error collection class that enables HTML Purifier to report HTML
- * problems back to the user
+ * problems back to the admin
  */
 class HTMLPurifier_ErrorCollector
 {

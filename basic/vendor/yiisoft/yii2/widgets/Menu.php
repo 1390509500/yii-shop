@@ -38,7 +38,7 @@ use yii\helpers\Html;
  *             ['label' => 'New Arrivals', 'url' => ['product/index', 'tag' => 'new']],
  *             ['label' => 'Most Popular', 'url' => ['product/index', 'tag' => 'popular']],
  *         ]],
- *         ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+ *         ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->admin->isGuest],
  *     ],
  * ]);
  * ```

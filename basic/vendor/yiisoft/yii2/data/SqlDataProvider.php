@@ -27,11 +27,11 @@ use yii\di\Instance;
  *
  * ```php
  * $count = Yii::$app->db->createCommand('
- *     SELECT COUNT(*) FROM user WHERE status=:status
+ *     SELECT COUNT(*) FROM admin WHERE status=:status
  * ', [':status' => 1])->queryScalar();
  *
  * $dataProvider = new SqlDataProvider([
- *     'sql' => 'SELECT * FROM user WHERE status=:status',
+ *     'sql' => 'SELECT * FROM admin WHERE status=:status',
  *     'params' => [':status' => 1],
  *     'totalCount' => $count,
  *     'sort' => [
@@ -50,7 +50,7 @@ use yii\di\Instance;
  *     ],
  * ]);
  *
- * // get the user records in the current page
+ * // get the admin records in the current page
  * $models = $dataProvider->getModels();
  * ```
  *

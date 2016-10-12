@@ -60,7 +60,7 @@ trait ArrayableTrait
      * ```
      *
      * In this method, you may also want to return different lists of fields based on some context
-     * information. For example, depending on the privilege of the current application user,
+     * information. For example, depending on the privilege of the current application admin,
      * you may return different sets of visible fields or filter out some fields.
      *
      * The default implementation of this method returns the public object member variables indexed by themselves.
@@ -85,7 +85,7 @@ trait ArrayableTrait
      * The default implementation returns an empty array.
      *
      * You may override this method to return a list of expandable fields based on some context information
-     * (e.g. the current application user).
+     * (e.g. the current application admin).
      *
      * @return array the list of expandable field names or field definitions. Please refer
      * to [[fields()]] on the format of the return value.

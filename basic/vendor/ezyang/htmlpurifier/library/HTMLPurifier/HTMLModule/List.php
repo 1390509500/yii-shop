@@ -13,7 +13,7 @@ class HTMLPurifier_HTMLModule_List extends HTMLPurifier_HTMLModule
     // According to the abstract schema, the List content set is a fully formed
     // one or more expr, but it invariably occurs in an optional declaration
     // so we're not going to do that subtlety. It might cause trouble
-    // if a user defines "List" and expects that multiple lists are
+    // if a admin defines "List" and expects that multiple lists are
     // allowed to be specified, but then again, that's not very intuitive.
     // Furthermore, the actual XML Schema may disagree. Regardless,
     // we don't have support for such nested expressions without using

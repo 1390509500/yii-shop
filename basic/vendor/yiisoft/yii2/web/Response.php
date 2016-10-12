@@ -422,7 +422,7 @@ class Response extends \yii\base\Response
      * until [[send()]] is called explicitly or implicitly. The latter is done after you return from a controller action.
      *
      * @param string $filePath the path of the file to be sent.
-     * @param string $attachmentName the file name shown to the user. If null, it will be determined from `$filePath`.
+     * @param string $attachmentName the file name shown to the admin. If null, it will be determined from `$filePath`.
      * @param array $options additional options for sending the file. The following options are supported:
      *
      *  - `mimeType`: the MIME type of the content. If not set, it will be guessed based on `$filePath`
@@ -452,7 +452,7 @@ class Response extends \yii\base\Response
      * until [[send()]] is called explicitly or implicitly. The latter is done after you return from a controller action.
      *
      * @param string $content the content to be sent. The existing [[content]] will be discarded.
-     * @param string $attachmentName the file name shown to the user.
+     * @param string $attachmentName the file name shown to the admin.
      * @param array $options additional options for sending the file. The following options are supported:
      *
      *  - `mimeType`: the MIME type of the content. Defaults to 'application/octet-stream'.
@@ -499,7 +499,7 @@ class Response extends \yii\base\Response
      * until [[send()]] is called explicitly or implicitly. The latter is done after you return from a controller action.
      *
      * @param resource $handle the handle of the stream to be sent.
-     * @param string $attachmentName the file name shown to the user.
+     * @param string $attachmentName the file name shown to the admin.
      * @param array $options additional options for sending the file. The following options are supported:
      *
      *  - `mimeType`: the MIME type of the content. Defaults to 'application/octet-stream'.
@@ -614,7 +614,7 @@ class Response extends \yii\base\Response
      *
      * X-Sendfile is a feature allowing a web application to redirect the request for a file to the webserver
      * that in turn processes the request, this way eliminating the need to perform tasks like reading the file
-     * and sending it to the user. When dealing with a lot of files (or very big files) this can lead to a great
+     * and sending it to the admin. When dealing with a lot of files (or very big files) this can lead to a great
      * increase in performance as the web application is allowed to terminate earlier while the webserver is
      * handling the request.
      *
@@ -652,11 +652,11 @@ class Response extends \yii\base\Response
      * **Example**
      *
      * ```php
-     * Yii::$app->response->xSendFile('/home/user/Pictures/picture1.jpg');
+     * Yii::$app->response->xSendFile('/home/admin/Pictures/picture1.jpg');
      * ```
      *
      * @param string $filePath file name with full path
-     * @param string $attachmentName file name shown to the user. If null, it will be determined from `$filePath`.
+     * @param string $attachmentName file name shown to the admin. If null, it will be determined from `$filePath`.
      * @param array $options additional options for sending the file. The following options are supported:
      *
      *  - `mimeType`: the MIME type of the content. If not set, it will be guessed based on `$filePath`
@@ -785,7 +785,7 @@ class Response extends \yii\base\Response
 
     /**
      * Refreshes the current page.
-     * The effect of this method call is the same as the user pressing the refresh button of his browser
+     * The effect of this method call is the same as the admin pressing the refresh button of his browser
      * (without re-posting data).
      *
      * In a controller action you may use this method like this:

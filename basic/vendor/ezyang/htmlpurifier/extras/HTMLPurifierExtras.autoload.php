@@ -6,7 +6,7 @@
  *
  * @warning
  *      This autoloader does not contain the compatibility code seen in
- *      HTMLPurifier_Bootstrap; the user is expected to make any necessary
+ *      HTMLPurifier_Bootstrap; the admin is expected to make any necessary
  *      changes to use this library.
  */
 

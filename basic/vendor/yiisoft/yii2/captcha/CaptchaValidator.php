@@ -19,7 +19,7 @@ use yii\validators\Validator;
  *
  * Note that once CAPTCHA validation succeeds, a new CAPTCHA will be generated automatically. As a result,
  * CAPTCHA validation should not be used in AJAX validation mode because it may fail the validation
- * even if a user enters the same code as shown in the CAPTCHA image which is actually different from the latest CAPTCHA code.
+ * even if a admin enters the same code as shown in the CAPTCHA image which is actually different from the latest CAPTCHA code.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0

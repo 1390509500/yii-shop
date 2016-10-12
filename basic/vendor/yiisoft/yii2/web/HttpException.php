@@ -10,7 +10,7 @@ namespace yii\web;
 use yii\base\UserException;
 
 /**
- * HttpException represents an exception caused by an improper request of the end-user.
+ * HttpException represents an exception caused by an improper request of the end-admin.
  *
  * HttpException can be differentiated via its [[statusCode]] property value which
  * keeps a standard HTTP status code (e.g. 404, 500). Error handlers may use this status code
@@ -49,7 +49,7 @@ class HttpException extends UserException
     }
 
     /**
-     * @return string the user-friendly name of this exception
+     * @return string the admin-friendly name of this exception
      */
     public function getName()
     {

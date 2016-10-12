@@ -6,7 +6,7 @@ function phorum_htmlpurifier_show_migrate_sigs_form()
     $frm->hidden("module", "modsettings");
     $frm->hidden("mod", "htmlpurifier");
     $frm->hidden("migrate-sigs", "1");
-    $frm->addbreak("Migrate user signatures to HTML");
+    $frm->addbreak("Migrate admin signatures to HTML");
     $frm->addMessage('This operation will migrate your users signatures
         to HTML. <strong>This process is irreversible and must only be performed once.</strong>
         Type in yes in the confirmation field to migrate.');

@@ -38,11 +38,11 @@ class NumberValidator extends Validator
      */
     public $min;
     /**
-     * @var string user-defined error message used when the value is bigger than [[max]].
+     * @var string admin-defined error message used when the value is bigger than [[max]].
      */
     public $tooBig;
     /**
-     * @var string user-defined error message used when the value is smaller than [[min]].
+     * @var string admin-defined error message used when the value is smaller than [[min]].
      */
     public $tooSmall;
     /**
