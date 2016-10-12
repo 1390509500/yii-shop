@@ -92,17 +92,17 @@
             <?php foreach($products as $product): ?>
                     <div class="row no-margin order-item">
                         <div class="col-xs-12 col-sm-1 no-margin">
-                        <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $product['productid']]) ?>" class="qty"><?php echo $product['productnum'] ?> x</a>
+                        <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productId' => $product['productId']]) ?>" class="qty"><?php echo $product['productnum'] ?> x</a>
                         </div>
 
                         <div class="col-xs-12 col-sm-9 ">
 
                         <div class="title">
 
-                            <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $product['productid']]) ?>" class="thumb-holder">
-                                <img class="lazy" alt="" src="<?php echo $product['cover'] ?>-picsmall" />
+                            <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productId' => $product['productId']]) ?>" class="thumb-holder">
+                                <img class="lazy" alt="" width="67" height="60" src="<?php echo $product['cover'] ?>" />
                             </a>
-                            <a style="margin-left:50px" href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $product['productid']]) ?>"><?php echo $product['title'] ?></a></div>
+                            <a style="margin-left:50px" href="<?php echo yii\helpers\Url::to(['product/detail', 'productId' => $product['productId']]) ?>"><?php echo $product['title'] ?></a></div>
                         </div>
 
                         <div class="col-xs-12 col-sm-2 no-margin">
