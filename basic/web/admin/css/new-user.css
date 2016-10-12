@@ -11,7 +11,7 @@
     margin-left: 0;
     float: left;
     width: 100%; }
-  .new-user .form-wrapper label {
+  .new-user .form-wrapper .field-box label {
     display: inline-block;
     float: left;
     font-weight: 600;

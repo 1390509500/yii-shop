@@ -251,7 +251,7 @@ input.search{
 /* Sidebar */
 #sidebar-nav {
 	position: absolute;
-	width: 180px;
+	width: 182px;
 	float: left;
 	margin: 0em;
 	padding-top: 5.8em;	
@@ -273,7 +273,7 @@ input.search{
 	box-shadow: 0 2px 1px -1px #FFFFFF;
 	color: rgb(110, 130, 155);
 	outline: 0px;
-	width: 88%;
+	width: 120%;
 }
 #dashboard-menu > li {
 	position: relative;
